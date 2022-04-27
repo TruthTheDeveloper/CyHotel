@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.header-background-image{
+    background:linear-gradient(to bottom, rgba(0, 0, 0, 0.459),rgba(0, 0, 0, 0.432)), url(./assets/images/room13.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    width:100%;
+}
+
+.service-background-image{
+    background:url(./assets/images/room10.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+
+/* background-image: linear-gradient(0, 0, 0, 0.658), url(../images/Job\ Hunt\ 3.png); */
