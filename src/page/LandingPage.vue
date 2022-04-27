@@ -40,15 +40,19 @@
     </header>
     <about-us/>
     <services/>
+    <rooms/>
 </template>
 
 <script>
 import AboutUs from './components/AboutUs.vue';
-import Services from './components/Services.vue'
+import Services from './components/Services.vue';
+import Rooms from './components/Rooms.vue';
+
 export default {
     components:{
         AboutUs,
-        Services
+        Services,
+        Rooms
     }
 
 }
