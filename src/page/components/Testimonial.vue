@@ -2,7 +2,9 @@
     <section class="flex flex-col md:flex-row  justify-center my-12 border shadow-md w-9/12 lg:w-8/12 mx-auto">
         <div class="basis-1/2 ml-5 lg:ml-12 py-6">
             <div class=" text-lg text-slate-500  lg:px-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur vitae voluptatibus nemo repellendus vero, id, harum vel ducimus aspernatur
+                <blockquote class="">&ldquo; 
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur vitae voluptatibus nemo repellendus vero, id, harum vel ducimus aspernatur &ldquo; 
+                </blockquote>
             </div>
             <div class="flex my-24">
                 <div class="h-24 w-24 ">
