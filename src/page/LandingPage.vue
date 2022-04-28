@@ -66,7 +66,7 @@
     </header>
     <about-us/>
     <services/>
-    <rooms/>
+    <!-- <rooms/> -->
     <credit/>
     <testimonial/>
     <explore/>
@@ -97,3 +97,9 @@ const setOpenNav = () => {
 
 </script>
 
+import Cloudinary from 'cloudinary-vue';
+Vue.use(Cloudinary, {
+  configuration: {
+    cloudName: "di8abd9yq"
+  }
+});
