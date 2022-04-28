@@ -18,15 +18,17 @@
                 <p class="text-pink-500">In our Hotel</p>
             </div>
             <div class="flex justify-center lg:mt-24 mt-12  mx-auto flex-col md:flex-row">
-                <div class="bg-white px-8 py-3">
-                    <p class="font-semibold mb-2">CHECK IN</p>
+                <div class="bg-white px-8 py-3 border">
+                    <p class="font-semibold mb-2">CHECK IN <i class="fa-solid fa-arrow-left"></i>
+<i class="fa-brands fa-facebook"></i> 
+</p>
                     <h1 class="text-slate-500">09<span>Mar</span></h1>
                 </div>
-                <div class="bg-white px-8 py-3">
+                <div class="bg-white px-8 py-3 border">
                     <p class="font-semibold mb-2">CHECK OUT</p>
                     <h1 class="text-slate-500">12<span>Mar</span></h1>
                 </div>
-                <div class="bg-white px-8 py-3">
+                <div class="bg-white px-8 py-3 border">
                     <p class="font-semibold mb-2">GUESTS</p>
                     <h1 class="text-slate-500">10<span>Mar</span></h1>
                 </div>
@@ -41,18 +43,31 @@
     <about-us/>
     <services/>
     <rooms/>
+    <credit/>
+    <testimonial/>
+    <explore/>
+    <Footer/>
 </template>
 
 <script>
 import AboutUs from './components/AboutUs.vue';
 import Services from './components/Services.vue';
 import Rooms from './components/Rooms.vue';
+import Credit from './components/Credit.vue';
+import Testimonial from './components/Testimonial.vue';
+import Explore from './components/Explore.vue';
+import Footer from './components/Footer.vue';
+
 
 export default {
     components:{
         AboutUs,
         Services,
-        Rooms
+        Rooms,
+        Credit,
+        Testimonial,
+        Explore,
+        Footer
     }
 
 }
