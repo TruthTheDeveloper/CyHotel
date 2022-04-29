@@ -67,11 +67,10 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 // vue import
-import { onMounted, onUnmounted, watch, ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 
 
 const isGreaterThan425x = ref(1);
-const width = ref(window.innerWidth)
 
 export default {
     components: {
@@ -89,48 +88,30 @@ setup() {
       };
 
       const onResize = () => {
-    if (window.innerWidth < 500) {
-        console.log('change')
-        isGreaterThan425x.value = 1;
-      } else if(window.innerWidth < 1000){
-          console.log('change')
-        isGreaterThan425x.value = 3;
-      } else if(window.innerWidth > 1000){
-          console.log('change')
-        isGreaterThan425x.value = 4;
+        if (window.innerWidth < 650) {
+            isGreaterThan425x.value = 1;
+          } else if(window.innerWidth < 950){
+            isGreaterThan425x.value = 2;
+          } else if(window.innerWidth > 950 && window.innerWidth < 1400){
+            isGreaterThan425x.value = 3;
+          }else if(window.innerWidth > 1400){
+            isGreaterThan425x.value = 4;
+          }
       }
-  }
 
+      onUnmounted(() => {
+      window.removeEventListener('resize', onResize)
+      })
 
-    onUnmounted(() => {
-    window.removeEventListener('resize', onResize)
-    })
+      onMounted(() => {
+          onResize()
+      window.addEventListener('resize', onResize)
+      })
 
-    watch(window.innerWidth, (newQuestion) => {
-        console.log(newQuestion, 'innerwidth aa')
-        if (window.innerWidth < 500) {
-        console.log('change')
-        isGreaterThan425x.value = 1;
-      } else if(window.innerWidth < 1000){
-          console.log('change')
-        isGreaterThan425x.value = 2;
-      } else if(window.innerWidth > 1000){
-          console.log('change')
-        isGreaterThan425x.value = 4;
-      }
-    })
-
-
-
-    onMounted(() => {
-        onResize()
-    window.addEventListener('resize', onResize)
-    })
       return {
         onSwiper,
         onSlideChange,
         isGreaterThan425x,
-        onResize,
         modules: [Navigation, Pagination, Scrollbar, A11y],
       };
     },

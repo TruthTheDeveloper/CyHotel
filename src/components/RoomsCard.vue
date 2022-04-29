@@ -1,6 +1,6 @@
 <template>
-        <div class="m-5 px-6 py-4 shadow-xl border mb-14">
-            <div class="w-64 h-72 bg-red-700">
+        <div class=" px-6 mx-5 py-4 shadow-xl border mb-14">
+            <div class=" h-64 bg-red-700">
                 <img :src="roomImage" class="h-full w-full"/>
             </div>
             <div class="">
@@ -11,7 +11,7 @@
                     Book now
                 </button>
             </div>
-    </div>
+        </div>
 </template>
 
 <script setup>

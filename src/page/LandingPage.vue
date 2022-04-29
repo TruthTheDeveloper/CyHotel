@@ -57,7 +57,7 @@
                         <h1 class="font-bold text-2xl">10<span class="text-slate-500 font-normal text-base pl-2">Mar</span><i class="fa-solid font-ligh  ml-2 text-base fa-angle-down cursor-pointer"></i></h1>
                     </div>
                 </div>
-                <div class=" px-8 py-3 bg-pink-500 text-white  text-center cursor-pointer">
+                <div class=" px-8 py-3 bg-pink-500 text-white  text-center cursor-pointer md:pt-5 font-semibold">
                    
                     Check<br/> Availablity
                 </div>
