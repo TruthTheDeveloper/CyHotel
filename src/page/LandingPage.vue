@@ -1,5 +1,6 @@
 <template>
-    <header class=" w-full ">
+
+    <header class="w-full">
         <div class="header-background-image px-8 pb-16 lg:h-screen">
             <nav class="h-5 flex p-4 justify-between ">
                 <h1 class="text-white text-2xl md:text-3xl lg:text-4xl font-extrabold ">Cy-<span class="text-pink-500">hotel</span></h1>
@@ -64,13 +65,13 @@
         </div>
         
     </header>
-    <about-us/>
+    <about-us/> 
     <services/>
-    <rooms/>
-    <credit/>
-    <testimonial/>
-    <explore/>
-    <Footer/>
+     <rooms/> 
+     <credit/> 
+     <testimonial/> 
+     <explore/> 
+      <Footer/> 
 </template>
 
 <script setup>
