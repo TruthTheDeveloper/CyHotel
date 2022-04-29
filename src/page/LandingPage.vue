@@ -66,7 +66,7 @@
     </header>
     <about-us/>
     <services/>
-    <!-- <rooms/> -->
+    <rooms/>
     <credit/>
     <testimonial/>
     <explore/>
