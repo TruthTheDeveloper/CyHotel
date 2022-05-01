@@ -22,10 +22,12 @@ dom.watch();
 // vue Calender
 import VCalendar from 'v-calendar';
 
-// Use plugin with defaults
-app.use(VCalendar, {})
+
 
 const app = createApp(App);
+
+// Use plugin with defaults
+app.use(VCalendar, {})
 
 app.component("font-awesome-icon", FontAwesomeIcon);
 
