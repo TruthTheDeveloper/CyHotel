@@ -1,6 +1,6 @@
 <template>
-
-    <header class="w-full">
+    <section class="overflow-x-hidden">
+        <header class="">
         <div class="header-background-image px-8 pb-16 lg:h-screen">
             <nav class="h-5 flex p-4 justify-between ">
                 <h1 class="text-white text-2xl md:text-3xl lg:text-4xl font-extrabold ">Cy-<span class="text-pink-500">hotel</span></h1>
@@ -38,7 +38,7 @@
                         <!-- {{togglePopover()}} -->
                         <div class="flex justify-center lg:mt-24 mt-12  mx-auto flex-col md:flex-row">
                             <v-date-picker class="" v-model="date" :min-date="date" :value="null" color="pink">
-                                <template v-slot="{ inputValue, togglePopover }">
+                                <template v-slot="{  togglePopover }">
                                     <div class="bg-white px-8 md:px-5 py-3 border flex">
                                         <i class="fa-solid fa-user-check text-pink-500 text-2xl mt-5 md:pl-2"></i>
                                         <div class="mx-2 pb" >
@@ -49,7 +49,7 @@
                                 </template>
                             </v-date-picker>
                             <v-date-picker class="" v-model="date2" :min-date="date" :value="null" color="pink">
-                                <template v-slot="{ inputValue, togglePopover }">
+                                <template v-slot="{ togglePopover }">
                                     <div class="bg-white px-8 py-3 md:px-5 border flex">
                                         <i class="fa-solid fa-user-xmark text-pink-500 text-2xl mt-5"></i>
                                         <div class="mx-2">
@@ -98,6 +98,7 @@
      <testimonial/> 
      <explore/> 
     <Footer/> 
+    </section>
 </template>
 
 <script setup>
@@ -115,16 +116,15 @@ import {ref, watch} from 'vue';
 
 const openNav = ref(false)
 
+//guest ref
 const guest = ref(1)
 
 const incrementGuest = () => {
-
     guest.value += 1
 }
 
 
 const decrementGuest = () => {
-    
     if(guest.value !==0){
         guest.value -= 1
     }

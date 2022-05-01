@@ -4,20 +4,20 @@
          <h1 class="text-lg my-2 ml-8 font-semibold">Services</h1>
          <h2 class="text-2xl lg:text-3xl py-4 font-bold mb-4 ml-8">Strive only for the best! </h2>
          <div class="flex py-6 mx-8">
-             <i class="fa-solid fa-shield text-3xl bg-slate-200 text-blue-500 py-4 px-6 rounded-full"></i>
-             <h3 class="text-xl lg:text-2xl font-semibold ml-8 mt-2">High Class Security</h3>
+             <i class="fa-solid fa-shield md:text-lg lg:text-3xl bg-slate-200 text-blue-500 py-4 px-6 rounded-full"></i>
+             <h3 class=" md:text-lg lg:text-2xl font-semibold ml-8 mt-2">High Class Security</h3>
          </div>
          <div class="flex py-6 mx-8">
-             <i class="fa-solid fa-headset text-3xl bg-slate-200 text-pink-500 py-4 px-6 rounded-full"></i>
-            <h3 class="text-xl lg:text-2xl font-semibold  ml-8 mt-2">24 hours room services</h3>
+             <i class="fa-solid fa-headset md:text-lg lg:text-3xl bg-slate-200 text-pink-500 py-4 px-6 rounded-full"></i>
+            <h3 class=" md:text-lg lg:text-2xl font-semibold  ml-8 mt-2">24 hours room services</h3>
          </div>
          <div class="flex py-6 mx-8">
-             <i class="fa-solid fa-people-roof text-3xl bg-orange-100 text-pink-500 py-4 px-6 rounded-full"></i>
-             <h3 class="text-xl lg:text-2xl font-semibold  ml-8 mt-2">Conference room</h3>
+             <i class="fa-solid fa-people-roof md:text-lg lg:text-3xl bg-orange-100 text-pink-500 py-4 px-6 rounded-full"></i>
+             <h3 class="md:text-lg lg:text-2xl font-semibold  ml-8 mt-2">Conference room</h3>
          </div>
          <div class="flex py-6 mx-8">
-             <i class="fa-solid fa-book-open text-3xl bg-orange-100 text-pink-500 py-4 px-6 rounded-full"></i>
-             <h3 class="text-xl lg:text-2xl font-semibold  ml-8 mt-2">Turiest Guide Support</h3>
+             <i class="fa-solid fa-book-open md:text-lg lg:text-3xl bg-orange-100 text-pink-500 py-4 px-6 rounded-full"></i>
+             <h3 class="md:text-lg lg:text-2xl font-semibold  ml-8 mt-2">Turiest Guide Support</h3>
          </div>
     </div>
  </section>
