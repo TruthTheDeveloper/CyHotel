@@ -1,6 +1,6 @@
 <template>
     <section class="">
-        <div class="pb-12 bg-slate-400 mb-6">
+        <div class="pb-12 mb-6" style="background:#0D0206">
             <nav class="h-5 flex p-4 justify-between ">
                 <h1 class="text-white text-2xl md:text-3xl lg:text-4xl font-extrabold ">Cy-<span class="text-pink-500">hotel</span></h1>
                 <ul v-if="openNav === false" class="text-white lg:flex text-lg mr-8 pt-2 hidden">
