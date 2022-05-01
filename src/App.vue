@@ -1,19 +1,13 @@
 <template>
-  <LandingPage/>
+  <router-view/>
+  <Footer/> 
 </template>
 
 
 
-<script>
+<script setup>
 
 import Footer from './components/Footer.vue';
-import LandingPage from './page/LandingPage.vue';
-export default {
-    components:{
-      Footer,
-      LandingPage
-  
-  },
-}
+
 </script>
 

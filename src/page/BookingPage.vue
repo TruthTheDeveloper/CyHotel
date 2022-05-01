@@ -1,7 +1,6 @@
 <template>
-    <section class="overflow-x-hidden">
-        <header class="">
-        <div class="header-background-image px-8 pb-16 lg:h-screen">
+    <section class="">
+        <div class="pb-12 bg-slate-400 mb-6">
             <nav class="h-5 flex p-4 justify-between ">
                 <h1 class="text-white text-2xl md:text-3xl lg:text-4xl font-extrabold ">Cy-<span class="text-pink-500">hotel</span></h1>
                 <ul v-if="openNav === false" class="text-white lg:flex text-lg mr-8 pt-2 hidden">
@@ -19,9 +18,8 @@
                 <div v-if="openNav === true" class="lg:hidden" @click="setOpenNav()">
                     <i class="fa fa-close text-white text-3xl cursor-pointer"></i>
                 </div>
-                
             </nav>
-            <ul v-if="openNav === true" class="bg-white text-black lg:flex text-lg mr-8 pt-2 mt-12 w-full pl-2 pb-4 font-semibold">
+            <ul v-if="openNav === true" class="bg-white text-black lg:flex text-lg mx-12 pt-2 mt-12  pl-2 pb-4 font-semibold">
                     <li class="my-1"><a href="#">Home</a></li>
                     <li class="my-1"><a href="#">Rooms</a></li>
                     <li class="my-1"><a href="#">Services</a></li>
@@ -29,14 +27,9 @@
                     <li class="my-1"><a href="#">Contact Us</a></li>
                     <!-- <li class="mx-4"><a href="#">07019035442</a></li> -->
                     <li class="bg-pink-500 h-10 pt-1 rounded-sm w-28 text-center text-white font-normal mt-2 cursor-pointer">Book Now</li>
-            </ul>
-            <div class="text-white text-center lg:mt-56 font-semibold text-3xl mt-36 md:mt-44 md:text-4xl lg:text-5xl">
-                <h1 class="my-4">Make yourself at home</h1>
-                <p class="text-pink-500">In our Hotel</p>
-            </div>
-        
-                <!-- {{togglePopover()}} -->
-                <div class="flex justify-center lg:mt-24 mt-12  mx-auto flex-col md:flex-row">
+                </ul>
+        </div>
+        <div class="flex justify-center lg:mt-24 mt-12  mx-3 md:mx-auto flex-col md:flex-row">
                     <v-date-picker class="" v-model="date" :min-date="date" :value="null" color="pink">
                         <template v-slot="{  togglePopover }">
                             <div class="bg-white px-8 md:px-5 py-3 border flex">
@@ -87,19 +80,80 @@
                         Check<br/> Availablity
                     </div>
                 </div>    
+        <h1 class="text-center font-bold text-xl lg:text-3xl py-16">Select and book from the 220 rooms available</h1>
+        <div class="flex flex-col md:flex-row border-2 shadow-xl mx-3 my-12 md:mx-12 xl:w-8/12 lg:w-7/12 lg:mx-auto">
+            <div class="p-5 h-80">
+                <img src="../assets/images/room8.jpg" class="w-full h-full" />
             </div>
-        </header>
-    <about-us/> 
-    <services/>
-     <rooms/> 
-     <credit/> 
-     <testimonial/> 
-     <explore/> 
+            <div class="py-6 pb-2 pl-4 m-2">
+                <h1 class="text-xl font-semibold py-2">Duplex Room</h1>
+                <p class="py-2">Semi double bed 1 guest room 3 windows</p>
+                <p>$50/night</p>
+                <button class="bg-pink-500 my-5 px-6 py-3 text-white">Book Now</button>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row border-2 shadow-xl mx-3 my-12 md:mx-12 xl:w-8/12 lg:w-7/12 lg:mx-auto">
+            <div class="p-5 h-80">
+                <img src="../assets/images/room8.jpg" class="w-full h-full" />
+            </div>
+            <div class="py-6 pb-2 pl-4 m-2">
+                <h1 class="text-xl font-semibold py-2">Duplex Room</h1>
+                <p class="py-2">Semi double bed 1 guest room 3 windows</p>
+                <p>$50/night</p>
+                <button class="bg-pink-500 my-5 px-6 py-3 text-white">Book Now</button>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row border-2 shadow-xl mx-3 my-12 md:mx-12 xl:w-8/12 lg:w-7/12 lg:mx-auto">
+            <div class="p-5 h-80">
+                <img src="../assets/images/room8.jpg" class="w-full h-full" />
+            </div>
+            <div class="py-6 pb-2 pl-4 m-2">
+                <h1 class="text-xl font-semibold py-2">Duplex Room</h1>
+                <p class="py-2">Semi double bed 1 guest room 3 windows</p>
+                <p>$50/night</p>
+                <button class="bg-pink-500 my-5 px-6 py-3 text-white">Book Now</button>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row border-2 shadow-xl mx-3 my-12 md:mx-12 xl:w-8/12 lg:w-7/12 lg:mx-auto">
+            <div class="p-5 h-80">
+                <img src="../assets/images/room8.jpg" class="w-full h-full" />
+            </div>
+            <div class="py-6 pb-2 pl-4 m-2">
+                <h1 class="text-xl font-semibold py-2">Duplex Room</h1>
+                <p class="py-2">Semi double bed 1 guest room 3 windows</p>
+                <p>$50/night</p>
+                <button class="bg-pink-500 my-5 px-6 py-3 text-white">Book Now</button>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row border-2 shadow-xl mx-3 my-12 md:mx-12 xl:w-8/12 lg:w-7/12 lg:mx-auto">
+            <div class="p-5 h-80">
+                <img src="../assets/images/room8.jpg" class="w-full h-full" />
+            </div>
+            <div class="py-6 pb-2 pl-4 m-2">
+                <h1 class="text-xl font-semibold py-2">Duplex Room</h1>
+                <p class="py-2">Semi double bed 1 guest room 3 windows</p>
+                <p>$50/night</p>
+                <button class="bg-pink-500 my-5 px-6 py-3 text-white">Book Now</button>
+            </div>
+        </div>
+        <div class="flex justify-center text-white">
+            <button class="bg-pink-500 py-4 px-4 mx-2 rounded-md">Previous</button>
+            <button class="border-2 text-black py-2 px-6 mx-2 rounded-md">1</button>
+            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md">2</button>
+            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden sm:block">3</button>
+            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden md:block">4</button>
+            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden md:block">5</button>
+            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden xl:block">6</button>
+            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden xl:block">7</button>
+            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden xl:block">8</button>
+            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden xl:block">9</button>
+            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden xl:block">10</button>
+            <button class="bg-pink-500 py-4 px-6 mx-2 rounded-md rounded-md">Last</button>
+        </div>
     </section>
 </template>
 
 <script setup>
-
 import AboutUs from './components/AboutUs.vue';
 import Services from './components/Services.vue';
 import Rooms from './components/Rooms.vue';
@@ -116,7 +170,6 @@ const openNav = ref(false)
 const setOpenNav = () => {
     openNav.value = !openNav.value
 }
-
 //guest ref
 const guest = ref(1)
 
@@ -131,6 +184,11 @@ const decrementGuest = () => {
     }
 }
 
+
+// const bookButtonHandler = () => {
+
+//     $router.push()
+// }
 
 // Date Ref
 const date = ref(new Date())
@@ -151,22 +209,5 @@ month.value[10] = "November";
 month.value[11] = "December";
 
 
-
-
-// watch(date, (oldVal, newVal) => {
-//     console.log(oldVal, newVal, '[datetime]')
-// })
-
-// watch(date2, (oldVal, newVal) => {
-//     console.log(oldVal, newVal, '[datetime2]')
-// })
-
-
-
-
-
-
-
-  
 
 </script>

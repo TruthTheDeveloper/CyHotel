@@ -1,5 +1,8 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+
+//vue router
+import {router} from './router.js'
 //Golbal css
 import './index.css';
 
@@ -25,6 +28,9 @@ import VCalendar from 'v-calendar';
 
 
 const app = createApp(App);
+
+//use router
+app.use(router)
 
 // Use plugin with defaults
 app.use(VCalendar, {})
