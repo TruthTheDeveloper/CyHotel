@@ -62,7 +62,7 @@
                 <div v-if="!showConfirmPassword" class="flex border border-pink-500 ">
                     <input class="w-full py-2 outline-none pl-2" type="password" v-model="confirmPassword"/>
                     <div @click="switchConfirmPassword()">
-                        <i class="fas fa-eye-open m-1 text-black text-3xl cursor-pointer"></i>
+                        <i class="fa-solid fa-eye m-1 text-xl cursor-pointer text-pink-500 pt-2"></i>
                     </div>
                 </div>
                 <div v-else class="flex border border-pink-500 ">
