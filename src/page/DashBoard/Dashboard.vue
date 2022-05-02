@@ -1,0 +1,78 @@
+<template>
+    <section class="my-12">
+        <div class="flex justify-center my-10">
+            <h1 class="text-xl text-center font-semibold">Confirm and pay</h1>
+        </div>
+        <div class="flex w-10/12 mx-auto ">
+            <form class="mx-12  border-2">
+                <h1 class="m-5 font-semibold">Your Details </h1>
+                <div class="flex">
+                    <input class="w-16 py-2 border-pink-500 border mx-5 pl-2 placeholder:text-sm   rounded-sm" placeholder="Mr"/>
+                    <input class="border-pink-500 border mx-5 pl-2 placeholder:text-sm outline-none  rounded-sm" placeholder="First Name"/>
+                    <input class="border-pink-500 border mx-5 pl-2 placeholder:text-sm outline-none  rounded-sm" placeholder="Last Name"/>
+                </div>
+                <div class="flex my-6">
+                    <input class="w-16 mx-auto py-2 border-pink-500 border pl-2 placeholder:text-sm   rounded-sm" placeholder="Mr"/>
+                    <input class="border-pink-500 border mx-auto pl-2 placeholder:text-sm outline-none  rounded-sm" placeholder="Phone Number"/>
+                    <input class="border-pink-500 border mx-auto pl-2 placeholder:text-sm outline-none rounded-sm" placeholder="Email"/>
+                </div>
+                <div class="flex text-sm">
+                    <input class="border-pink-500 border mt-1 mx-5" type="checkbox"/>
+                    <p>i'm Making this reservation on behalf of someone else </p>
+                </div>
+                <div class="m-5">
+                    <textarea class="border-pink-500 border w-full h-32 rounded-sm placeholder:p-5 placeholder:text-sm outline-none pl-2 pt-2" placeholder="Enter additional request"/>
+                </div>
+                <div class="flex mx-5 my-5">
+                    <i class="fa-solid fa-gift text-pink-500 pt-1 mx-1"></i>
+                    <p class="text-pink-500 cursor-pointer">Add Discount Code</p>
+                </div>
+                <div class="bg-pink-200 py-12 mx-5 mb-5 hidden">
+                    <input class=" border w-9/12 ml-12 py-2 border-black outline-none rounde-md"/>
+                </div>
+                <div class="flex justify-between text-white">
+                    <button class="bg-pink-500 py-4 px-6 ml-6 rounded-md">Pay at Hotel</button>
+                    <button class="bg-pink-500 py-4 px-12 mr-10 rounded-md">Pay Now</button>
+                </div>
+                <div class="w-96 text-xs m-5 bg-pink-200 mx-auto my-12">
+                    <p class="p-5">We use your personal data to process services that you have applied for, to contact you with newsletters and deal offers, and for personalised content and ads. You consent to our Data Policy if you click the above. You can withdraw consent and contact our Data Protection Officer at any time.</p>
+                </div>
+            </form>
+            <div class=" mx-12 shadowx-xl border-2 p-5  ">
+                <div class="flex ">
+                    <div>
+                        <img src="../../assets/images/room3.jpg" class="w-44"/>
+                    </div>
+                    <div class="mx-5">
+                        <p class="font-semibold">Duplex Room</p>
+                        <p>Semi double bed 1 guest room 3 windows</p>
+                    </div>
+                </div>
+                <div class="flex justify-between my-12 border-2 border-pink-500 p-5">
+                    <div>
+                        <h1 class="font-semibold my-1">Check In</h1>
+                        <p class="my-2 text-sm"><i class="fa-solid fa-calendar"></i> Mon,2 May 2022 </p>
+                        <p class="my-2 text-sm"><i class="fa-regular fa-clock"></i>12:00PM</p>
+                    </div>
+                    <div>
+                        <h1 class="font-semibold my-1">Check out</h1>
+                        <p class="my-2 text-sm"><i class="fa-solid fa-calendar"></i> Mon,2 May 2022 </p>
+                        <p class="my-2 text-sm"><i class="fa-regular fa-clock"></i>12:00PM</p>
+                    </div>
+                </div>
+                <div class="flex my-12 border-2 border-pink-500 p-5">
+                    <p class="mr-8">1 Rooms</p>
+                    <p class="mx-auto">1 Guest</p>
+                    <p class="mx-auto">1 Night</p>
+                    <div>
+                    <button class="py-1 px-6 border text-sm border-black">change</button>
+                </div>
+                </div>
+                <div class="flex justify-between p-5 bg-pink-100">
+                    <p class=" font-semibold">Total</p>
+                    <p class="text-2xl font-semibold">80$</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
