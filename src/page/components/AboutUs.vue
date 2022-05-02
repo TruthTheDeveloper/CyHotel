@@ -1,5 +1,5 @@
 <template>
-    <section class="flex my-32 justify-center flex-col md:flex-row flex-col-reverse relative ">
+    <section id="about-us" class="flex my-32 justify-center flex-col md:flex-row flex-col-reverse relative ">
         <div class="basis-1/4 lg:basis-1/3 md:basis-1/2 m-8 ">
             <img src="../../assets/images/reception.jpg" class="w-full h-full "/>
             <div class="bg-white absolute  bottom-16 md:bottom-24 lg:bottom-12 md:top-56 md:left-16 border shadow-xl rounded-md z-40  bg-red-700">

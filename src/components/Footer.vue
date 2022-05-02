@@ -1,5 +1,5 @@
 <template>
-    <section class="mt-12 text-white py-24" style="background:#0D0206">
+    <section id="footer" class="mt-12 text-white py-24" style="background:#0D0206">
         <div class="flex flex-col lg:flex-row my-6 ml-8 lg:ml-0">
         <div class="lg:mx-auto">
             <h1 class="text-white text-2xl md:text-3xl lg:text-4xl font-extrabold ">Cy-<span class="text-pink-500">hotel</span></h1>

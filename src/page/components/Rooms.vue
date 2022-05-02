@@ -1,5 +1,5 @@
 <template>
-    <section class="">
+    <section id="rooms">
         <div class="m-8 my-12">
             <h1 class="my-4">OUR LIVING ROOM </h1>
             <p class="font-semibold text-4xl">The most memorable rest<br/> time starts here.</p>
