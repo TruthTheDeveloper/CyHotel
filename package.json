@@ -17,8 +17,7 @@
     "swiper": "^8.1.4",
     "v-calendar": "^3.0.0-alpha.8",
     "vue": "^3.2.25",
-    "vue-router": "4",
-    "vue-tel-input": "^5.11.0"
+    "vue-router": "4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.1",

@@ -8,13 +8,15 @@
             <form class="mx-12  border-2">
                 <h1 class="m-5 font-semibold">Your Details </h1>
                 <div class="flex">
-                    <input class="w-16 py-2 border-pink-500 border mx-5 pl-2 placeholder:text-sm   rounded-sm" placeholder="Mr"/>
+                    <select class="w-16 mx-auto py-2 border-pink-500 border pl-2 placeholder:text-sm outline-none   rounded-sm" placeholder="Mr">
+                        <option>Mr</option>
+                        <option>Mrs</option>
+                    </select>
                     <input class="border-pink-500 border mx-5 pl-2 placeholder:text-sm outline-none  rounded-sm" placeholder="First Name"/>
                     <input class="border-pink-500 border mx-5 pl-2 placeholder:text-sm outline-none  rounded-sm" placeholder="Last Name"/>
                 </div>
                 <div class="flex my-6">
-                    <input class="w-16 mx-auto py-2 border-pink-500 border pl-2 placeholder:text-sm   rounded-sm" placeholder="Mr"/>
-                    <input class="border-pink-500 border mx-auto pl-2 placeholder:text-sm outline-none  rounded-sm" placeholder="Phone Number"/>
+                    <vue-tel-input v-model="phone"></vue-tel-input>
                     <input class="border-pink-500 border mx-auto pl-2 placeholder:text-sm outline-none rounded-sm" placeholder="Email"/>
                 </div>
                 <div class="flex text-sm">
@@ -81,4 +83,7 @@
 
 <script setup>
 import Navbar from '../../components/Navbar.vue';
+import {ref} from 'vue';
+
+const phone = ref('')
 </script>
