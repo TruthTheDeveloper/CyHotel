@@ -1,7 +1,8 @@
 <template>
+    <Navbar/>
     <section class="my-12">
         <div class="flex justify-center my-10">
-            <h1 class="text-xl text-center font-semibold">Confirm and pay</h1>
+            <h1 class="text-3xl text-center font-semibold">Confirm and pay</h1>
         </div>
         <div class="flex w-10/12 mx-auto ">
             <form class="mx-12  border-2">
@@ -27,8 +28,9 @@
                     <i class="fa-solid fa-gift text-pink-500 pt-1 mx-1"></i>
                     <p class="text-pink-500 cursor-pointer">Add Discount Code</p>
                 </div>
-                <div class="bg-pink-200 py-12 mx-5 mb-5 hidden">
-                    <input class=" border w-9/12 ml-12 py-2 border-black outline-none rounde-md"/>
+                <div class="bg-pink-200 py-8 mx-5 mb-5 rounded-md hidden ">
+                    <input class=" border w-9/12 ml-12 py-2 border-slate-400 rounded-md outline-none rounde-md border pl-2 placeholder:pl-3" placeholder="Enter Code"/>
+                    <button class="px-10 py-2 bg-pink-500 text-white mx-auto flex my-8 rounded-md">Apply Discount</button>
                 </div>
                 <div class="flex justify-between text-white">
                     <button class="bg-pink-500 py-4 px-6 ml-6 rounded-md">Pay at Hotel</button>
@@ -38,7 +40,7 @@
                     <p class="p-5">We use your personal data to process services that you have applied for, to contact you with newsletters and deal offers, and for personalised content and ads. You consent to our Data Policy if you click the above. You can withdraw consent and contact our Data Protection Officer at any time.</p>
                 </div>
             </form>
-            <div class=" mx-12 shadowx-xl border-2 p-5  ">
+            <div class=" mx-12 shadowx-xl border-2 p-5  h-3/6">
                 <div class="flex ">
                     <div>
                         <img src="../../assets/images/room3.jpg" class="w-44"/>
@@ -48,19 +50,19 @@
                         <p>Semi double bed 1 guest room 3 windows</p>
                     </div>
                 </div>
-                <div class="flex justify-between my-12 border-2 border-pink-500 p-5">
+                <div class="flex justify-between my-12 border-2 border-pink-500 p-5 rounded-md">
                     <div>
                         <h1 class="font-semibold my-1">Check In</h1>
-                        <p class="my-2 text-sm"><i class="fa-solid fa-calendar"></i> Mon,2 May 2022 </p>
-                        <p class="my-2 text-sm"><i class="fa-regular fa-clock"></i>12:00PM</p>
+                        <p class="my-2 text-sm"><i class="fa-solid fa-calendar text-pink-500 pr-2"></i> Mon,2 May 2022 </p>
+                        <p class="my-2 text-sm"><i class="fa-regular fa-clock text-pink-500 pr-2"></i>12:00PM</p>
                     </div>
                     <div>
                         <h1 class="font-semibold my-1">Check out</h1>
-                        <p class="my-2 text-sm"><i class="fa-solid fa-calendar"></i> Mon,2 May 2022 </p>
-                        <p class="my-2 text-sm"><i class="fa-regular fa-clock"></i>12:00PM</p>
+                        <p class="my-2 text-sm"><i class="fa-solid fa-calendar text-pink-500 pr-2"></i> Mon,2 May 2022 </p>
+                        <p class="my-2 text-sm"><i class="fa-regular fa-clock text-pink-500 pr-2"></i>12:00PM</p>
                     </div>
                 </div>
-                <div class="flex my-12 border-2 border-pink-500 p-5">
+                <div class="flex my-12 border-2 border-pink-500 p-5 rounded-md">
                     <p class="mr-8">1 Rooms</p>
                     <p class="mx-auto">1 Guest</p>
                     <p class="mx-auto">1 Night</p>
@@ -76,3 +78,7 @@
         </div>
     </section>
 </template>
+
+<script setup>
+import Navbar from '../../components/Navbar.vue';
+</script>
