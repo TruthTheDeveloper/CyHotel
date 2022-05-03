@@ -17,6 +17,6 @@ import { useRouter } from 'vue-router';
 const router = useRouter()
 
 const bookButtonHandler = () => {
-    router.push('/register')
+    router.push('/dashboard')
 }
 </script>

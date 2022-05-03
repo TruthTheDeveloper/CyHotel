@@ -24,11 +24,13 @@ dom.watch();
 
 // vue Calender
 import VCalendar from 'v-calendar';
-
+import VueTelInput from 'vue3-tel-input'
+import 'vue3-tel-input/dist/vue3-tel-input.css'
 
 
 const app = createApp(App);
-
+//use
+app.use(VueTelInput);
 //use router
 app.use(router)
 

@@ -285,6 +285,11 @@ color-name@^1.1.4:
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
+core-js@^3.6.5:
+  version "3.22.4"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.22.4.tgz#f4b3f108d45736935aa028444a69397e40d8c531"
+  integrity sha512-1uLykR+iOfYja+6Jn/57743gc9n73EWiOnSJJ4ba3B4fOEYDBv25MagmEZBxTp5cWq4b/KPx/l77zgsp28ju4w==
+
 cssesc@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
@@ -569,6 +574,11 @@ is-number@^7.0.0:
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
+libphonenumber-js@^1.9.6:
+  version "1.9.52"
+  resolved "https://registry.yarnpkg.com/libphonenumber-js/-/libphonenumber-js-1.9.52.tgz#662ea92dcb6761ceb2dc9a8cd036aadd355bc999"
+  integrity sha512-8k83chc+zMj+J/RkaBxi0PpSTAdzHmpqzCMqquSJVRfbZFr8DCp6vPC7ms2PIPGxeqajZLI6CBLW5nLCJCJrYg==
+
 lilconfig@^2.0.5:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-2.0.5.tgz#19e57fd06ccc3848fd1891655b5a447092225b25"
@@ -800,6 +810,11 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
+user@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/user/-/user-0.0.0.tgz#f27f1b23fc511f2a8efa40db55cfba123824e02a"
+  integrity sha1-8n8bI/xRHyqO+kDbVc+6Ejgk4Co=
+
 util-deprecate@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
@@ -835,7 +850,17 @@ vue-router@4:
   dependencies:
     "@vue/devtools-api" "^6.0.0"
 
-vue@^3.2.25:
+vue3-tel-input@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/vue3-tel-input/-/vue3-tel-input-1.0.4.tgz#ed26cb808d124aebb5073d03f366b23e686804d6"
+  integrity sha512-C60OyAq5ORDErSJ4x7UmJJbF95CDncMswnySmAUtbuBP0pcVcJBu6DOTxKquykvTbJEh9I73DXyqMtDxtLrwJg==
+  dependencies:
+    core-js "^3.6.5"
+    libphonenumber-js "^1.9.6"
+    user "^0.0.0"
+    vue "^3.0.0-beta.1"
+
+vue@^3.0.0-beta.1, vue@^3.2.25:
   version "3.2.33"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.2.33.tgz#7867eb16a3293a28c4d190a837bc447878bd64c2"
   integrity sha512-si1ExAlDUrLSIg/V7D/GgA4twJwfsfgG+t9w10z38HhL/HA07132pUQ2KuwAo8qbCyMJ9e6OqrmWrOCr+jW7ZQ==

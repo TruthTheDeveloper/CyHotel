@@ -2,7 +2,7 @@
     <section id="about-us" class="flex my-32 justify-center flex-col md:flex-row flex-col-reverse relative ">
         <div class="basis-1/4 lg:basis-1/3 md:basis-1/2 m-8 ">
             <img src="../../assets/images/reception.jpg" class="w-full h-full "/>
-            <div class="bg-white absolute  bottom-16 md:bottom-24 lg:bottom-12 md:top-56 md:left-16 border shadow-xl rounded-md z-40  bg-red-700">
+            <div class="bg-white absolute  bottom-16 md:bottom-24 lg:bottom-12 md:top-56 md:left-16 border shadow-xl rounded-md z-40">
                 <h1 class="text-center py-3 font-semibold">Our Address </h1>
                 <p class=" py-2 text-center px-12 pb-4">1, Folarin Wiliams close, ikola<br/> ikenegbu plaza owerri california</p>
             </div>
