@@ -4,6 +4,7 @@ import BookingPage from './page/BookingPage.vue';
 import Register from './page/Auth/Register.vue';
 import Login from './page/Auth/Login.vue';
 import Dashboard from './page/DashBoard/Dashboard.vue';
+import Reservation from './page/DashBoard/Reservation.vue';
 
 export const router = createRouter({
     history:createWebHistory(),
@@ -32,6 +33,11 @@ export const router = createRouter({
             name:'Dashboard',
             path:'/dashboard',
             component:Dashboard
+        },
+        {
+            name:'Rservation',
+            path:'/reservation',
+            component:Reservation
         },
 
     ]

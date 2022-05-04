@@ -843,6 +843,13 @@ vite@^2.9.5:
   optionalDependencies:
     fsevents "~2.3.2"
 
+vue-flutterwave@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/vue-flutterwave/-/vue-flutterwave-1.0.0.tgz#d991038b8352dd2ca81d328b101834957fd76547"
+  integrity sha512-MAbTkt6CPGGxhTakTkp/+Pyhm1Rjs/t6ESEYPilWTKtZIB1QBVwtrURWd5dXz9V1grTB9R+jBod90LjH6PKRgw==
+  dependencies:
+    vue "^2.6.7"
+
 vue-router@4:
   version "4.0.14"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.14.tgz#ce2028c1c5c33e30c7287950c973f397fce1bd65"
@@ -859,6 +866,11 @@ vue3-tel-input@^1.0.4:
     libphonenumber-js "^1.9.6"
     user "^0.0.0"
     vue "^3.0.0-beta.1"
+
+vue@^2.6.7:
+  version "2.6.14"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
+  integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==
 
 vue@^3.0.0-beta.1, vue@^3.2.25:
   version "3.2.33"

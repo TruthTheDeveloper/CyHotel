@@ -11,13 +11,20 @@
                     <select class="xl:w-16 w-full mb-5 xl:mb-0  py-2  border-pink-500 border pl-2 placeholder:text-sm outline-none   rounded-sm" placeholder="Mr">
                         <option>Mr</option>
                         <option>Mrs</option>
+                        <option>Miss</option>
+                        <option>Chief</option>
+                        <option>Dr</option>
+                        <option>Engr</option>
+                        <option>Senator</option>
+                        <option>Arch</option>
+                        <option>Barr</option>
                     </select>
                     <input class="border-pink-500 border mb-5 xl:mb-0 xl:mx-5  py-2  pl-2 placeholder:text-sm outline-none  rounded-sm" placeholder="First Name"/>
                     <input class="border-pink-500 border  py-2 pl-2 placeholder:text-sm outline-none  rounded-sm" placeholder="Last Name"/>
                 </div>
                 <div class="flex flex-col xl:flex-row my-6 mx-5">
                     <div class="border-pink-500 border w-full  mb-5 xl:mb-0">
-                        <vue-tel-input v-model="phone"></vue-tel-input>
+                        <vue-tel-input class="h-full border-pink-500 border" v-model="phone"></vue-tel-input>
                     </div>
                     <input class="border-pink-500 border py-2 pl-2 xl:ml-8 placeholder:text-sm outline-none rounded-sm" placeholder="Email"/>
                 </div>
@@ -84,6 +91,15 @@
 <script setup>
 import Navbar from '../../components/Navbar.vue';
 import {ref} from 'vue';
-
+import { useRouter } from 'vue-router';
+const router = useRouter()
 const phone = ref('')
+
+const payAtHotelButtonHandler = () => {
+    router.push('/reservation')
+}
+
+const payNowButtonHandler = () => {
+    router.push('/reservation')
+}
 </script>
