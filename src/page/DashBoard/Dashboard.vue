@@ -44,8 +44,9 @@
                     <button class="px-10 py-2 bg-pink-500 text-white mx-auto flex my-8 rounded-md">Apply Discount</button>
                 </div>
                 <div class="flex flex-col xl:flex-row justify-between text-white mx-5">
+                    <input type="number" v-model.number="amount" />
                     <button class="bg-pink-500 my-3 md:py-4 py-2 px-4 md:px-6  rounded-md">Pay at Hotel</button>
-                    <button class="bg-pink-500 my-3 md:py-4 py-2 px-4 md:px-12  rounded-md">Pay Now</button>
+                    <button class="bg-pink-500 my-3 md:py-4 py-2 px-4 md:px-12  rounded-md" @click="makePayment">Pay Now</button>
                 </div>
                 <div class="lg:w-96 text-xs  bg-pink-200  my-12 mx-5 xl:mx-auto">
                     <p class="p-5">We use your personal data to process services that you have applied for, to contact you with newsletters and deal offers, and for personalised content and ads. You consent to our Data Policy if you click the above. You can withdraw consent and contact our Data Protection Officer at any time.</p>
@@ -94,10 +95,35 @@ import {ref} from 'vue';
 import { useRouter } from 'vue-router';
 const router = useRouter()
 const phone = ref('')
+const amount = ref(200)
 
 const payAtHotelButtonHandler = () => {
     router.push('/reservation')
 }
+
+const makePayment = () => {
+      this.$launchFlutterwave({
+        tx_ref: Date.now(),
+        amount: this.amount,
+        currency: 'NGN',
+        payment_options: 'card,mobilemoney,ussd',
+        customer: {
+          email: 'user@gmail.com',
+          phonenumber: '08102909304',
+          name: 'yemi desola'
+        },
+        callback: function(data) {
+          // specified callback function
+          console.log(data)
+        },
+        customizations: {
+          title: 'My store',
+          description: 'Payment for items in cart',
+          logo: 'https://assets.piedpiper.com/logo.png'
+        }
+      })
+    }
+  }
 
 const payNowButtonHandler = () => {
     router.push('/reservation')
