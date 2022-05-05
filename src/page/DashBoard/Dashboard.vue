@@ -32,6 +32,29 @@
                     <input class="border-pink-500 border mt-1 md:mx-3 lg:mx-5 mr-2" type="checkbox"/>
                     <p>i'm Making this reservation on behalf of someone else </p>
                 </div>
+                <div class="my-6 hidden">
+                    <div class="flex flex-col xl:flex-row mx-5">
+                    <select class="xl:w-16 w-full mb-5 xl:mb-0  py-2  border-pink-500 border pl-2 placeholder:text-sm outline-none   rounded-sm" placeholder="Mr">
+                        <option>Mr</option>
+                        <option>Mrs</option>
+                        <option>Miss</option>
+                        <option>Chief</option>
+                        <option>Dr</option>
+                        <option>Engr</option>
+                        <option>Senator</option>
+                        <option>Arch</option>
+                        <option>Barr</option>
+                    </select>
+                    <input class="border-pink-500 border mb-5 xl:mb-0 xl:mx-5  py-2  pl-2 placeholder:text-sm outline-none  rounded-sm" placeholder="First Name"/>
+                    <input class="border-pink-500 border  py-2 pl-2 placeholder:text-sm outline-none  rounded-sm" placeholder="Last Name"/>
+                    </div>
+                    <div class="flex flex-col xl:flex-row my-6 mx-5">
+                        <div class="border-pink-500 border w-full  mb-5 xl:mb-0">
+                            <vue-tel-input class="h-full border-pink-500 border" v-model="phone"></vue-tel-input>
+                        </div>
+                        <input class="border-pink-500 border py-2 pl-2 xl:ml-8 placeholder:text-sm outline-none rounded-sm" placeholder="Email"/>
+                    </div>
+                </div>
                 <div class="m-5">
                     <textarea class="border-pink-500 border w-full h-32 rounded-sm placeholder:p-5 placeholder:text-sm outline-none pl-2 pt-2" placeholder="Enter additional request"/>
                 </div>
@@ -44,27 +67,8 @@
                     <button class="px-10 py-2 bg-pink-500 text-white mx-auto flex my-8 rounded-md">Apply Discount</button>
                 </div>
                 <div class="flex flex-col xl:flex-row justify-between text-white mx-5">
-                    <input type="number" v-model.number="amount" />
                     <button class="bg-pink-500 my-3 md:py-4 py-2 px-4 md:px-6  rounded-md">Pay at Hotel</button>
-                    <flutterwave-pay-button
-        :tx_ref="generateReference()"
-        :amount=20
-        currency='NGN'
-        payment_options="card,ussd"
-        redirect_url=""
-        class="class-name"
-        style=""
-        :meta="{counsumer_id: '7898' ,consumer_mac: 'kjs9s8ss7dd' }"
-        :customer="{ name: 'Demo Customer  Name',
-        email: 'customer@mail.com', 
-        phone_number: '0818450****' }"
-        :customizations="{  title: 'Customization Title' ,
-        description: 'Customization Description'  ,
-        logo : 'https://flutterwave.com/images/logo-colored.svg' }"
-        :callback="makePaymentCallback"
-        :onclose="closedPaymentModal"
-    >   Click To Pay </flutterwave-pay-button>
-                    <!-- <button class="bg-pink-500 my-3 md:py-4 py-2 px-4 md:px-12  rounded-md" @click="makePayment">Pay Now</button> -->
+                    <button class="bg-pink-500 my-3 md:py-4 py-2 px-4 md:px-12  rounded-md">Pay Now</button>
                 </div>
                 <div class="lg:w-96 text-xs  bg-pink-200  my-12 mx-5 xl:mx-auto">
                     <p class="p-5">We use your personal data to process services that you have applied for, to contact you with newsletters and deal offers, and for personalised content and ads. You consent to our Data Policy if you click the above. You can withdraw consent and contact our Data Protection Officer at any time.</p>
@@ -96,7 +100,7 @@
                     <p class="text-sm pt-1">1 Rooms</p>
                     <p class="text-sm pt-1 xl:mx-auto">1 Guest</p>
                     <p class="text-sm pt-1">1 Night</p>
-                    <button class="py-1 px-6 border text-sm border-black my-3 xl:my-0 mx-auto sm:ml-auto">change</button>
+                    <button class="py-1 px-6 border text-sm border-black my-3 xl:my-0 mx-auto sm:ml-auto" @click="changeButtonHandler">change</button>
                 </div>
                 <div class="flex justify-between p-5 bg-pink-100">
                     <p class=" font-semibold">Total</p>
@@ -113,24 +117,14 @@ import {ref} from 'vue';
 import { useRouter } from 'vue-router';
 const router = useRouter()
 const phone = ref('')
-const amount = ref(200)
 
 const payAtHotelButtonHandler = () => {
     router.push('/reservation')
 }
 
-const makePaymentCallback = (response) => {
-      console.log("Payment callback", response)
-    }
-const  closedPaymentModal = () => {
-    console.log('payment modal is closed');
-}
-const generateReference = () => {
-    let date = new Date()
-    return date.getTime().toString();
+const changeButtonHandler = () => {
+    router.push('/book')
 }
 
-const payNowButtonHandler = () => {
-    router.push('/reservation')
-}
+
 </script>
