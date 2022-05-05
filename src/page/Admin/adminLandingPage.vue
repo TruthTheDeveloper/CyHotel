@@ -1,7 +1,8 @@
 <template>
     <section class="">
         <navbar/>
-        <h1 class="text-center font-bold text-xl lg:text-3xl py-16">Select and book from the 220 rooms available</h1>
+        <h1 class="text-center font-bold text-xl lg:text-3xl py-16">Available rooms</h1>
+        <button class="bg-pink-500 py-2 px-6 text-white flex mx-auto text-lg rounded-md">Add Room</button>
         <booking-card/>
         <booking-card/>
         <booking-card/>
@@ -25,35 +26,6 @@
 </template>
 
 <script setup>
-
-import Navbar from '../components/Navbar.vue';
-import BookingCard from '../components/BookingCard.vue';
-import Search from '../components/Search.vue';
-
-
-import {ref} from 'vue';
-
-const openNav = ref(false);
-
-const setOpenNav = () => {
-    openNav.value = !openNav.value
-};
-//guest ref
-const guest = ref(1);
-
-const incrementGuest = () => {
-    guest.value += 1
-};
-
-
-const decrementGuest = () => {
-    if(guest.value !==0){
-        guest.value -= 1
-    };
-};
-
-
-
-
-
+import Navbar from '../../components/Navbar.vue';
+import BookingCard from '../../components/BookingCard.vue';
 </script>
