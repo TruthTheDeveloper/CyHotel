@@ -30,6 +30,8 @@ import 'vue3-tel-input/dist/vue3-tel-input.css';
 //Flutterwave
 // import Flutterwave from  'vue-flutterwave';
 
+//vue js toggle button
+
 
 const app = createApp(App);
 
