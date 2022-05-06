@@ -3,11 +3,11 @@
         <navbar/>
         <h1 class="text-center font-bold text-xl lg:text-3xl py-16">Available rooms</h1>
         <button class="bg-pink-500 py-2 px-6 text-white flex mx-auto text-lg rounded-md">Add Room</button>
-        <booking-card/>
-        <booking-card/>
-        <booking-card/>
-        <booking-card/>
-        <booking-card/>
+        <booking-card buttonText="Update"/>
+        <booking-card buttonText="Update"/>
+        <booking-card buttonText="Update"/>
+        <booking-card buttonText="Update"/>
+        <booking-card buttonText="Update"/>
         <div class="flex justify-center text-white">
             <button class="bg-pink-500 py-4 px-4 mx-2 rounded-md">Previous</button>
             <button class="border-2 text-black py-2 px-6 mx-2 rounded-md">1</button>

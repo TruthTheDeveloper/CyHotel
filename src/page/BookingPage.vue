@@ -2,11 +2,11 @@
     <section class="">
         <navbar/>
         <h1 class="text-center font-bold text-xl lg:text-3xl py-16">Select and book from the 220 rooms available</h1>
-        <booking-card/>
-        <booking-card/>
-        <booking-card/>
-        <booking-card/>
-        <booking-card/>
+        <booking-card buttonText="Book Now"/>
+        <booking-card buttonText="Book Now"/>
+        <booking-card buttonText="Book Now"/>
+        <booking-card buttonText="Book Now"/>
+        <booking-card buttonText="Book Now"/>
         <div class="flex justify-center text-white">
             <button class="bg-pink-500 py-4 px-4 mx-2 rounded-md">Previous</button>
             <button class="border-2 text-black py-2 px-6 mx-2 rounded-md">1</button>

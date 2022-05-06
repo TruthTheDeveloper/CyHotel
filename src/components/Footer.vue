@@ -4,7 +4,7 @@
         <div class="lg:mx-auto">
             <h1 class="text-white text-2xl md:text-3xl lg:text-4xl font-extrabold ">Cy-<span class="text-pink-500">hotel</span></h1>
             <p class="text-lg my-4">Level 20, 2 Quence park, Jhonos Victoria 3000 new Zealand</p>
-            <button class="bg-pink-500 py-3 my-3 px-6 text-lg rounded-sm">book Now</button>
+            <button class="bg-pink-500 py-3 my-3 px-6 text-lg rounded-sm" @click="bookButtonHandler()">book Now</button>
         </div>
         <div class="lg:mx-auto">
             <h1 class="text-2xl">Quick Links</h1>
@@ -44,6 +44,6 @@ import { useRouter } from 'vue-router';
 const router = useRouter()
 
 const bookButtonHandler = () => {
-    router.push('/dashboard')
+    router.push('/book')
 }
 </script>

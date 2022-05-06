@@ -7,14 +7,18 @@
                 <h1 class="text-xl font-semibold py-2">Duplex Room</h1>
                 <p class="py-2">Semi double bed 1 guest room 3 windows</p>
                 <p>$50/night</p>
-                <button class="bg-pink-500 my-5 px-6 py-3 text-white" @click="bookButtonHandler()">Book Now</button>
+                <button class="bg-pink-500 my-5 px-6 py-3 text-white" @click="bookButtonHandler()">{{props.buttonText}}</button>
             </div>
         </div>
 </template>
 
 <script setup>
 import { useRouter } from 'vue-router';
+
 const router = useRouter()
+const props = defineProps({
+        buttonText:String,
+    })
 
 const bookButtonHandler = () => {
     router.push('/dashboard')
