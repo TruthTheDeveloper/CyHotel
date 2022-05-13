@@ -13,25 +13,25 @@ import { createRouter, createWebHistory } from 'vue-router';
 // const Management = () => import('./page/Admin/management.vue')
 import LandingPage from './page/LandingPage.vue';
 import BookingPage from './page/BookingPage.vue';
-import Register from './page/Auth/register.vue';
-import Login from './page/Auth/login.vue';
-import DashBoard from './page/DashBoard/dashboard.vue';
-import Reservation from './page/DashBoard/reservation.vue';
-import AdminLandingPage from './page/Admin/adminLandingPage.vue';
-import AdminAuth from './page/Admin/adminAuth.vue';
-import AdminDashboard from './page/Admin/adminDashboard.vue';
-import createRoomForm from './page/Admin/createRoomForm.vue';
-import UpdateRoomForm from './page/Admin/updateRoomform.vue';
-import Management from './page/Admin/management.vue';
+import Register from './page/Auth/Register.vue';
+import Login from './page/Auth/Login.vue';
+import DashBoard from './page/DashBoard/Dashboard.vue';
+import Reservation from './page/DashBoard/Reservation.vue';
+import AdminLandingPage from './page/Admin/AdminLandingPage.vue';
+import AdminAuth from './page/Admin/AdminAuth.vue';
+import AdminDashboard from './page/Admin/AdminDashboard.vue';
+import CreateRoomForm from './page/Admin/CreateRoomForm.vue';
+import UpdateRoomForm from './page/Admin/UpdateRoomform.vue';
+import Management from './page/Admin/Management.vue';
 
 export const router = createRouter({
     history:createWebHistory(),
     routes:[
-        // {
-        //     name:'LandingPage',
-        //     path:'/',
-        //     component:LandingPage
-        // },
+        {
+            name:'LandingPage',
+            path:'/',
+            component:LandingPage
+        },
         {
             name:'BookingPage',
             path:'/book',
@@ -75,7 +75,7 @@ export const router = createRouter({
         {
             name:'createRoomForm',
             path:'/admin/create/roomform',
-            component:createRoomForm
+            component:CreateRoomForm
         },
         {
             name:'updateRoomForm',
