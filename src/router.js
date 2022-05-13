@@ -18,7 +18,7 @@ import Login from './page/Auth/Login.vue';
 import DashBoard from './page/DashBoard/Dashboard.vue';
 import Reservation from './page/DashBoard/Reservation.vue';
 // import AdminLandingPage from './page/Admin/AdminLandingPage.vue';
-import AdminAuth from './page/Admin/AdminAuth.vue';
+// import AdminAuth from './page/Admin/AdminAuth.vue';
 import AdminDashboard from './page/Admin/AdminDashboard.vue';
 import CreateRoomForm from './page/Admin/CreateRoomForm.vue';
 import UpdateRoomForm from './page/Admin/UpdateRoomform.vue';
@@ -62,10 +62,10 @@ export const router = createRouter({
         //     path:'/admin/landingpage',
         //     component:AdminLandingPage
         // },
-        {
-            name:'AdminAuth',
-            path:'/admin/auth',
-            component:AdminAuth
+        // {
+        //     name:'AdminAuth',
+        //     path:'/admin/auth',
+        //     component:AdminAuth
         },
         {
             name:'adminDashboard',
