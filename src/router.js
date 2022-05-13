@@ -11,8 +11,8 @@ import { createRouter, createWebHistory } from 'vue-router';
 // const createRoomForm = () => import('./page/Admin/createRoomForm.vue')
 // const UpdateRoomForm = () => import('./page/Admin/updateRoomform.vue')
 // const Management = () => import('./page/Admin/management.vue')
-// import LandingPage from './page/landingPage.vue';
-import BookingPage from './page/bookingPage.vue';
+import LandingPage from './page/LandingPage.vue';
+import BookingPage from './page/BookingPage.vue';
 import Register from './page/Auth/register.vue';
 import Login from './page/Auth/login.vue';
 import DashBoard from './page/DashBoard/dashboard.vue';
