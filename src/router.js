@@ -66,7 +66,7 @@ export const router = createRouter({
         //     name:'AdminAuth',
         //     path:'/admin/auth',
         //     component:AdminAuth
-        },
+        // },
         {
             name:'adminDashboard',
             path:'/admin/dashboard',
