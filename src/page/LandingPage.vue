@@ -56,7 +56,6 @@ import Credit from './components/Credit.vue';
 import Testimonial from './components/Testimonial.vue';
 import Explore from './components/Explore.vue';
 import Search from '../components/Search.vue';
-import BaseLayout from '../slot/BaseLayout.vue';
 
 
 // vue import
