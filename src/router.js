@@ -17,12 +17,12 @@ import Register from './page/Auth/Register.vue';
 import Login from './page/Auth/Login.vue';
 import DashBoard from './page/DashBoard/Dashboard.vue';
 import Reservation from './page/DashBoard/Reservation.vue';
-import Adminlandingpage from './page/Admin/Adminlandingpage.vue';
-import AdminAuth from './page/Admin/AdminAuth.vue';
-import AdminDashboard from './page/Admin/AdminDashboard.vue';
-import CreateRoomForm from './page/Admin/CreateRoomForm.vue';
-import UpdateRoomForm from './page/Admin/UpdateRoomform.vue';
-import Management from './page/Admin/Management.vue';
+import AdminLandingPage from './page/SuperUser/AdminLandingPage.vue';
+import AdminAuth from './page/SuperUser/AdminAuth.vue';
+import AdminDashboard from './page/SuperUser/AdminDashboard.vue';
+import CreateRoomForm from './page/SuperUser/CreateRoomForm.vue';
+import UpdateRoomForm from './page/SuperUser/UpdateRoomform.vue';
+import Management from './page/SuperUser/Management.vue';
 
 export const router = createRouter({
     history:createWebHistory(),
@@ -60,13 +60,13 @@ export const router = createRouter({
         {
             name:'AdminPage',
             path:'/admin/landingpage',
-            component:Adminlandingpage
+            component:AdminLandingPage
         },
-        // {
-        //     name:'AdminAuth',
-        //     path:'/admin/auth',
-        //     component:AdminAuth
-        // },
+        {
+            name:'AdminAuth',
+            path:'/admin/auth',
+            component:AdminAuth
+        },
         {
             name:'adminDashboard',
             path:'/admin/dashboard',
