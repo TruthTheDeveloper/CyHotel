@@ -12,13 +12,13 @@
                     Continue
                 </button>
             </div>
-            <!-- <div class="bg-white basis-1/3 mx-6  lg:mx-12 pl-5 py-6 my-12 rounded-md">
+            <div class="bg-white basis-1/3 mx-6  lg:mx-12 pl-5 py-6 my-12 rounded-md">
                 <h1 class="text-xl my-4">5 AUGUST 2021</h1>
                 <p class="text-3xl p-8 pl-0 my-3">ReInnovation of our Swimming pool</p>
                 <button class="border-pink-500 border-2 text-lg py-3 px-6 rounded-sm text-pink-500">
                     Continue
                 </button>
-            </div> -->
+            </div>
             <div class="bg-white basis-1/3 mx-6  lg:mx-12 pl-5 py-6 my-12 rounded-md">
                 <h1 class="text-xl my-4">12 MARCH 2021</h1>
                 <p class="text-3xl p-8 pl-0 my-3">The biggest birthday party in the city</p>
