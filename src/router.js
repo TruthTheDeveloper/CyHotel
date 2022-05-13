@@ -11,18 +11,18 @@ import { createRouter, createWebHistory } from 'vue-router';
 // const createRoomForm = () => import('./page/Admin/createRoomForm.vue')
 // const UpdateRoomForm = () => import('./page/Admin/updateRoomform.vue')
 // const Management = () => import('./page/Admin/management.vue')
-import landingPage from './page/landingPage.vue';
-import bookingPage from './page/bookingPage.vue';
-import register from './page/Auth/register.vue';
-import login from './page/Auth/login.vue';
-import dashBoard from './page/DashBoard/dashboard.vue';
-import reservation from './page/DashBoard/reservation.vue';
-import adminLandingPage from './page/Admin/adminLandingPage.vue';
-import adminAuth from './page/Admin/adminAuth.vue';
-import adminDashboard from './page/Admin/adminDashboard.vue';
+import LandingPage from './page/landingPage.vue';
+import BookingPage from './page/bookingPage.vue';
+import Register from './page/Auth/register.vue';
+import Login from './page/Auth/login.vue';
+import DashBoard from './page/DashBoard/dashboard.vue';
+import Reservation from './page/DashBoard/reservation.vue';
+import AdminLandingPage from './page/Admin/adminLandingPage.vue';
+import AdminAuth from './page/Admin/adminAuth.vue';
+import AdminDashboard from './page/Admin/adminDashboard.vue';
 import createRoomForm from './page/Admin/createRoomForm.vue';
-import updateRoomForm from './page/Admin/updateRoomform.vue';
-import management from './page/Admin/management.vue';
+import UpdateRoomForm from './page/Admin/updateRoomform.vue';
+import Management from './page/Admin/management.vue';
 
 export const router = createRouter({
     history:createWebHistory(),
@@ -30,47 +30,47 @@ export const router = createRouter({
         {
             name:'LandingPage',
             path:'/',
-            component:landingPage
+            component:LandingPage
         },
         {
             name:'BookingPage',
             path:'/book',
-            component:bookingPage
+            component:BookingPage
         },
         {
             name:'Register',
             path:'/register',
-            component:register
+            component:Register
         },
         {
             name:'Login',
             path:'/login',
-            component:login
+            component:Login
         },
         {
             name:'Dashboard',
             path:'/dashboard',
-            component:dashBoard
+            component:DashBoard
         },
         {
             name:'Reservation',
             path:'/reservation',
-            component:reservation
+            component:Reservation
         },
         {
             name:'AdminPage',
             path:'/admin/landingpage',
-            component:adminLandingPage
+            component:AdminLandingPage
         },
         {
             name:'AdminAuth',
             path:'/admin/auth',
-            component:adminAuth
+            component:AdminAuth
         },
         {
             name:'adminDashboard',
             path:'/admin/dashboard',
-            component:adminDashboard
+            component:AdminDashboard
         },
         {
             name:'createRoomForm',
@@ -80,13 +80,13 @@ export const router = createRouter({
         {
             name:'updateRoomForm',
             path:'/admin/update/roomform',
-            component:updateRoomForm
+            component:UpdateRoomForm
         },
 
         {
             name:'management',
             path:'/admin/management',
-            component:management
+            component:Management
         },
 
     ]
