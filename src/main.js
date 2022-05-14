@@ -1,6 +1,9 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 
+// Vuex
+import VuexApp from './vuex/App.vue';
+
 //vue router
 import {router} from './router.js'
 //Golbal css
@@ -49,4 +52,7 @@ app.component("font-awesome-icon", FontAwesomeIcon);
 
 // add necessary dependencies...
 
+//use vuex
+const app = createApp(VuexApp)
+app.use(store)
 app.mount("#app");
