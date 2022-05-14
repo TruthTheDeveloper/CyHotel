@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 
 // Vuex
-import VuexApp from './vuex/App.vue';
+import store from './store';
 
 //vue router
 import {router} from './router.js'
