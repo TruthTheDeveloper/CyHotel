@@ -101,14 +101,18 @@ const switchConfirmPassword = () => {
 };
 
 //computed propertis to check email validity
-const isEmailValid = computed(() => {
-    return email.value.includes('@') && email.value.includes('.')
-});
+const isEmailValid = computed(() => email.value.includes('@') && email.value.includes('.')
+);
 
+const lowerCaseEmail = computed(() => email.value.toLowerCase())
+
+
+
+//get global state through computed properties
 const storeState = computed(() => store.state.auth.statusCode)
 
 
-
+//watcher
 watch(storeState, (newVal,oldVal) => {
     if(newVal === 201){
         router.push('/login')
@@ -118,10 +122,9 @@ watch(storeState, (newVal,oldVal) => {
 
 
 
-
+// submit button handler
 const registerSubmitHandler = () => {
-    // console.log({username:{_value}})
-    console.log(username)
+    console.log(lowerCaseEmail.value, 'lower')
     username.value === "" ? usernameValidationError.value = 'please input username' : null
     !isEmailValid.value ? emailValidationError.value = 'please input a valid email' : null
     email.value === "" ? emailValidationError.value = "please input email" : null
@@ -135,7 +138,7 @@ const registerSubmitHandler = () => {
     !phoneNumberValidationError.value && 
     !passwordValidationError.value && 
     !confirmPasswordValidationError.value &&
-    store.dispatch('auth/registerUser', {username, email, phoneNumber, password})
+    store.dispatch('auth/registerUser', {username, lowerCaseEmail, phoneNumber, password})
 };
 
 //

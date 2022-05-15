@@ -59,6 +59,18 @@ const isEmailValid = computed(() => {
     return email.value.includes('@') && email.value.includes('.')
 })
 
+//get global state through computed properties
+const storeState = computed(() => store.state.auth.statusCode)
+
+
+//watcher
+// watch(storeState, (newVal,oldVal) => {
+//     if(newVal === 201){
+//         router.push('/login')
+//     }
+//     console.log(newVal, oldVal)
+// });
+
 
 const loginSubmitHandler = () => {
     !isEmailValid.value ? emailValidationError.value = 'please input a valid email' : null
@@ -69,7 +81,7 @@ const loginSubmitHandler = () => {
     !emailValidationError.value && 
     isEmailValid && 
     !passwordValidationError.value && 
-    console.log('success')
+    store.dispatch('auth/loginUser', {email, password})
 }
 
 </script>

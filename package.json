@@ -21,6 +21,7 @@
     "vue": "^3.2.25",
     "vue-flutterwave": "^1.0.0",
     "vue-router": "4",
+    "vue-toast-notification": "3.0",
     "vue3-tel-input": "^1.0.4",
     "vuex": "^4.0.2"
   },
