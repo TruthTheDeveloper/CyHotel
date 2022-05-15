@@ -3,7 +3,7 @@
     <form class=" my-12 xl:w-3/12 lg:w-4/12 md:w-6/12 mx-8 sm:mx-auto py-12 border border-pink-500 shadow-xl rounded-md">
         <h1 class="text-center font-semibold text-2xl">Sign Up</h1>
             <div class="my-1 px-3 py-2">
-                <label>username</label>
+                <label>Username</label>
                 <input class="w-full py-2 border border-pink-500 outline-none pl-2" v-model="username" @input="(e) => usernameValidationError = '' "/>
                 <p class="text-red-500 text-sm">{{usernameValidationError}}</p>
             </div>
@@ -60,11 +60,14 @@
 import Navbar from '../../components/Navbar.vue';
 
 //Vue js import
-import {ref, computed} from 'vue';
+import {ref, computed, watch} from 'vue';
 
 //vuex import
 import {useStore} from 'vuex';
 
+// route
+import { useRouter } from 'vue-router';
+const router = useRouter()
 
 //Local state
 const showPassword = ref(false);
@@ -91,20 +94,34 @@ const store = useStore();
 //methods
 const switchPassword = () => {
     showPassword.value = !showPassword.value
-}
+};
 
 const switchConfirmPassword = () => {
     showConfirmPassword.value = !showConfirmPassword.value
-}
+};
 
 //computed propertis to check email validity
 const isEmailValid = computed(() => {
     return email.value.includes('@') && email.value.includes('.')
-})
+});
+
+const storeState = computed(() => store.state.auth.statusCode)
+
+
+
+watch(storeState, (newVal,oldVal) => {
+    if(newVal === 201){
+        router.push('/login')
+    }
+    console.log(newVal, oldVal)
+});
+
 
 
 
 const registerSubmitHandler = () => {
+    // console.log({username:{_value}})
+    console.log(username)
     username.value === "" ? usernameValidationError.value = 'please input username' : null
     !isEmailValid.value ? emailValidationError.value = 'please input a valid email' : null
     email.value === "" ? emailValidationError.value = "please input email" : null
@@ -118,13 +135,10 @@ const registerSubmitHandler = () => {
     !phoneNumberValidationError.value && 
     !passwordValidationError.value && 
     !confirmPasswordValidationError.value &&
-    store.dispatch('auth/registerUser', {username, email, phoneNumber, password, confirmPassword})
-}
-
+    store.dispatch('auth/registerUser', {username, email, phoneNumber, password})
+};
 
 //
-
-
 
 
 </script>

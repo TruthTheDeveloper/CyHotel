@@ -4,8 +4,7 @@ import axios from 'axios'
 
 // initial state
 const state = () => ({
-  token:localStorage.getItem('token') || null,
-  user:[],
+  statusCode:null
 
 })
 
@@ -18,6 +17,9 @@ const getters = {
 
 // mutations
 const mutations = {
+  registerSuccess:(state, status) => {
+    state.statusCode = status
+  }
 
 }
 
@@ -28,15 +30,18 @@ const actions = {
   // increment: (ctx) => {
   //   console.log('sucess')
   // }
-  registerUser:({commit}, {username, email, phoneNumber, password}) => {
-    console.log({username, email, phoneNumber, password}, 'jhdjsd')
-    axios.post('http://127.0.0.1:8000/api/register/',{
-        username, 
-        email, 
-        phone_number:phoneNumber,
-        password
+  registerUser:({commit}, data) => {
+    console.log(data, 'jhdjsd')
+    axios.post('http://127.0.0.1:8000/api/users/register/',{
+        username:data.username.value, 
+        email:data.email.value, 
+        phone_number:data.phoneNumber.value,
+        password:data.password.value
       })
-      .then( response => console.log(response))
+      .then( response => {
+        console.log(response)
+        commit('registerSuccess', response.status)
+      })
       .catch(err => console.log(err))
   },
 
