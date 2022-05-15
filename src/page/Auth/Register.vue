@@ -14,7 +14,7 @@
             </div>
             <div class=" my-1 px-3 py-2">
                 <label>Phone Number</label>
-                <input class="w-full py-2 border border-pink-500 outline-none pl-2" v-model="phoneNumber" @input="(e) => phoneNumberValidationError = '' "/>
+                <input class="w-full py-2 border border-pink-500 outline-none pl-2" v-model="phoneNumber" @input="(e) => phoneNumberValidationError = '' " type="number"/>
                 <p class="text-red-500 text-sm">{{phoneNumberValidationError}}</p>
             </div>
             <div class=" my-1 px-3 py-2">
@@ -88,8 +88,6 @@ const confirmPasswordValidationError = ref('');
 //vuex state
 const store = useStore();
 
-
-
 //methods
 const switchPassword = () => {
     showPassword.value = !showPassword.value
@@ -99,40 +97,28 @@ const switchConfirmPassword = () => {
     showConfirmPassword.value = !showConfirmPassword.value
 }
 
+//computed propertis to check email validity
 const isEmailValid = computed(() => {
-    return email.value.includes('@')
+    return email.value.includes('@') && email.value.includes('.')
 })
 
-// const publishedBooksMessage = computed({
-// //   return username.value === '' && usernameValidationError.value = ''
-//     set(){
-//         username.value === '' ? usernameValidationError.value = '': null
-//     }
-
-//     // return author.books.length > 0 ? 'Yes' : 'No'
-
-
-// })
 
 
 const registerSubmitHandler = () => {
-    console.log(username, 'user')
     username.value === "" ? usernameValidationError.value = 'please input username' : null
+    !isEmailValid.value ? emailValidationError.value = 'please input a valid email' : null
     email.value === "" ? emailValidationError.value = "please input email" : null
-    !isEmailValid ? emailValidationError.value = 'please input a valid email' : null
     phoneNumber.value === "" ? phoneNumberValidationError.value = "please input phoneNumber" :null
     password.value === "" ? passwordValidationError.value = "please input password" : null
     confirmPassword.value !== password.value ? confirmPasswordValidationError.value = "password does not match" : null
 
     !usernameValidationError.value && 
     !emailValidationError.value && 
-    // isEmailValid && 
+    isEmailValid && 
     !phoneNumberValidationError.value && 
     !passwordValidationError.value && 
     !confirmPasswordValidationError.value &&
-    console.log('success')
-    // store.dispatch('auth/registerUser', {username, email, phoneNumber, password, confirmPassword})
-
+    store.dispatch('auth/registerUser', {username, email, phoneNumber, password, confirmPassword})
 }
 
 
