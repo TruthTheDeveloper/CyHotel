@@ -53,6 +53,5 @@ app.component("font-awesome-icon", FontAwesomeIcon);
 // add necessary dependencies...
 
 //use vuex
-const app = createApp(VuexApp)
 app.use(store)
 app.mount("#app");
