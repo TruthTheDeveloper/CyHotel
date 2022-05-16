@@ -913,11 +913,6 @@ vue-router@4:
   dependencies:
     "@vue/devtools-api" "^6.0.0"
 
-vue-toast-notification@3.0:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/vue-toast-notification/-/vue-toast-notification-3.0.2.tgz#4e2ec50a5ac51dc829eb5bfea1904457ff2db0b8"
-  integrity sha512-DY6yo8s2QFstEILZaoWAvP5ljzx4IHkFmFbuqEbStuNHMtk72XaHzTJb5QXK7HJFA0yneig9XN0r0luO0QIz0w==
-
 vue3-tel-input@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/vue3-tel-input/-/vue3-tel-input-1.0.4.tgz#ed26cb808d124aebb5073d03f366b23e686804d6"
