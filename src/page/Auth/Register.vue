@@ -56,6 +56,7 @@
 
 
 <script setup>
+import { createApp } from 'vue';
 //Component
 import Navbar from '../../components/Navbar.vue';
 
@@ -143,5 +144,12 @@ const registerSubmitHandler = () => {
 
 //
 
+
+// app.use(VueToast);
+
+// app.$toast.open('You did it!');
+
+
+console.log(this.)
 
 </script>

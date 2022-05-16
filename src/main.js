@@ -36,10 +36,17 @@ import 'vue3-tel-input/dist/vue3-tel-input.css';
 //vue js toggle button
 
 
+//Vue notification Toast
+import VueToast from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-sugar.css';
+
 const app = createApp(App);
 
 //use flutterwave
 // app.use(Flutterwave, { publicKey: 'FLWPUBK_TEST-0c42e13ec815f2e5ac5a6f338dd605a5-X' })
+
+//use vue notification
+app.use(VueToast);
 //use vuetel
 app.use(VueTelInput);
 //use router
