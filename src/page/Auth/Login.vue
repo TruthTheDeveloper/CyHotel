@@ -32,8 +32,11 @@
 //Components
 import Navbar from '../../components/Navbar.vue';
 
+//Toast Notification
+import { useToast } from "vue-toastification";
+
 // vue import
-import {ref, computed} from 'vue';
+import {ref, computed, watch} from 'vue';
 
 //vuex import
 import {useStore} from 'vuex';
@@ -45,8 +48,15 @@ const emailValidationError = ref('');
 const password = ref('');
 const passwordValidationError = ref('');
 
+// route
+import { useRouter } from 'vue-router';
+const router = useRouter()
+
 //vuex state
 const store = useStore();
+
+//toast notification
+const toast = useToast();
 
 const showPassword = ref(false)
 
@@ -62,14 +72,38 @@ const isEmailValid = computed(() => {
 //get global state through computed properties
 const storeState = computed(() => store.state.auth.statusCode)
 
+const msg = computed(() => store.state.auth.message)
 
-//watcher
-// watch(storeState, (newVal,oldVal) => {
-//     if(newVal === 201){
-//         router.push('/login')
-//     }
-//     console.log(newVal, oldVal)
-// });
+console.log(msg, 'msg')
+
+const successToastNotification = () =>{
+    toast.success(store.state.auth.message, {
+        timeout: 4000
+    })
+}
+
+const errorToastNotification = () =>{
+    toast.error(store.state.auth.message, {
+        timeout: 4000
+    })
+}
+
+
+
+console.log(storeState)
+
+watch(storeState, (newVal,oldVal) => {
+    if(newVal === 200){
+        router.push('/book')
+        successToastNotification()
+    }else if(newVal === 401){
+        errorToastNotification()
+    }
+
+});
+
+
+
 
 
 const loginSubmitHandler = () => {

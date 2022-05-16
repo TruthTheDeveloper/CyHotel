@@ -56,7 +56,9 @@
 
 
 <script setup>
-import { createApp } from 'vue';
+
+//Toast Notification
+import { useToast } from "vue-toastification";
 //Component
 import Navbar from '../../components/Navbar.vue';
 
@@ -92,6 +94,10 @@ const confirmPasswordValidationError = ref('');
 //vuex state
 const store = useStore();
 
+//toast notification
+const toast = useToast();
+
+
 //methods
 const switchPassword = () => {
     showPassword.value = !showPassword.value
@@ -113,13 +119,40 @@ const lowerCaseEmail = computed(() => email.value.toLowerCase())
 const storeState = computed(() => store.state.auth.statusCode)
 
 
+
+
+//Toast notification
+
+//succes notification
+const successToastNotification = () =>{
+    toast.success(store.state.auth.message, {
+        timeout: 4000
+    })
+}
+
+const errorToastNotification = () =>{
+    toast.error(store.state.auth.message, {
+        timeout: 4000
+    })
+}
+
 //watcher
 watch(storeState, (newVal,oldVal) => {
+    console.log(newVal, oldVal)
     if(newVal === 201){
         router.push('/login')
+        successToastNotification()
+    }else if(newVal === 400){
+        errorToastNotification()
     }
-    console.log(newVal, oldVal)
+   
 });
+
+
+
+
+
+   
 
 
 
@@ -142,14 +175,7 @@ const registerSubmitHandler = () => {
     store.dispatch('auth/registerUser', {username, lowerCaseEmail, phoneNumber, password})
 };
 
-//
 
 
-// app.use(VueToast);
-
-// app.$toast.open('You did it!');
-
-
-console.log(this.)
 
 </script>

@@ -37,8 +37,15 @@ import 'vue3-tel-input/dist/vue3-tel-input.css';
 
 
 //Vue notification Toast
-import VueToast from 'vue-toast-notification';
-import 'vue-toast-notification/dist/theme-sugar.css';
+import Toast from "vue-toastification";
+import "vue-toastification/dist/index.css";
+
+// Toast default options
+const options = {
+    // You can set your default options here
+};
+
+
 
 const app = createApp(App);
 
@@ -46,7 +53,7 @@ const app = createApp(App);
 // app.use(Flutterwave, { publicKey: 'FLWPUBK_TEST-0c42e13ec815f2e5ac5a6f338dd605a5-X' })
 
 //use vue notification
-app.use(VueToast);
+app.use(Toast, options);
 //use vuetel
 app.use(VueTelInput);
 //use router
