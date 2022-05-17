@@ -1,5 +1,4 @@
-import axios from 'axios'
-import store from '..'
+import axios from 'axios';
 
 
 
@@ -51,9 +50,7 @@ const mutations = {
 // actions
 const actions = {
 
-  // increment: (ctx) => {
-  //   console.log('sucess')
-  // }
+
   registerUser:({commit}, data) => {
     axios.post('http://127.0.0.1:8000/api/users/register/',{
         username:data.username.value, 
@@ -66,7 +63,6 @@ const actions = {
         commit('registerSuccess', response)
       })
       .catch(err =>{
-        // console.log()
         commit('registerFail', err.response)
       })
   },
@@ -87,12 +83,6 @@ const actions = {
   },
 
 
-  getRooms:({commit}, {username, email, phoneNumber, password}) => {
-    console.log({username, email, phoneNumber, password}, 'jhdjsd')
-    axios.get('http://127.0.0.1:8000/api/rooms/')
-      .then( response => console.log(response))
-      .catch(err => console.log(err))
-  }
 
 
 }

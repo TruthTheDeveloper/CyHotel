@@ -72,7 +72,7 @@ import {useStore} from 'vuex';
 import { useRouter } from 'vue-router';
 const router = useRouter()
 
-//Local state
+/////Local state//////
 const showPassword = ref(false);
 const showConfirmPassword = ref(false);
 
@@ -98,7 +98,7 @@ const store = useStore();
 const toast = useToast();
 
 
-//methods
+//////METHODS//////
 const switchPassword = () => {
     showPassword.value = !showPassword.value
 };
@@ -119,8 +119,6 @@ const lowerCaseEmail = computed(() => email.value.toLowerCase())
 const storeState = computed(() => store.state.auth.statusCode)
 
 
-
-
 //Toast notification
 
 //succes notification
@@ -136,7 +134,7 @@ const errorToastNotification = () =>{
     })
 }
 
-//watcher
+////WATHCHERS////
 watch(storeState, (newVal,oldVal) => {
     console.log(newVal, oldVal)
     if(newVal === 201){
