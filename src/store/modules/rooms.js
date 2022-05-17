@@ -5,12 +5,22 @@ import axios from 'axios';
 const state = () => ({
  allRooms:[],
  roomsCache:{},
- loading:false
+ loading:false,
+ adminRooms:[],
+ isCreated:false,
+ updateRoomsFormDetails:{}
 });
 
 // getters
 const getters = {
+  
+  isRoomCreated (state) {
+    return state.isCreated
+  },
 
+  roomDetails(state){
+    return state.updateRoomsFormDetails
+  }
 
 };
 
@@ -24,8 +34,21 @@ const mutations = {
 
   setLoading:(state, loading) => {
     state.loading = loading
+  },
+
+
+  setCreateRoom:(state, res) => {
+    state.adminRooms = res
+  },
+
+  roomCreated:(state, created) => {
+    state.isCreated = created
+  },
+
+  roomsUpdateDetails:(state, details) => {
+    state.updateRoomsFormDetails = details
   }
-};
+}
 
 // actions
 const actions = {
@@ -47,8 +70,30 @@ const actions = {
         commit('setLoading', false)
       })
     }
+  },
+
+  postRooms:({commit, state},payload) => {
+    console.log(payload, 'image')
+    let data = new FormData()
+    data.append('room_type', payload.roomTitle.value)
+    data.append('room_description', payload.roomDescription.value)
+    data.append('room_price', payload.roomPrice.value)
+    data.append('room_Image', payload.roomImage.value)
+    axios.post('http://127.0.0.1:8000/api/rooms/',data)
+      .then( response => {
+        console.log(response, 'ur only')
+        commit('setCreateRoom', response.data)
+        commit('roomCreated', true)
+        commit('setLoading', false)
+      })
+      .catch(err => {
+        console.log(err)
+        commit('setLoading', false)
+        commit('roomCreated', false)
+      })
   }
-};
+
+}
 
 
 
