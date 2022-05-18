@@ -8,7 +8,7 @@ const state = () => ({
   token:  localStorage.getItem('token') || "",
   message:'',
   allReservation:[],
-  email:''
+  email:localStorage.getItem('email') || ""
 
 })
 
@@ -34,7 +34,10 @@ const mutations = {
   loginSuccess:(state, token) => {
     localStorage.setItem('token', token.access)
     localStorage.setItem('refreshToken', token.refresh)
-    state.username = token.email
+    localStorage.setItem('email', token.email)
+
+    console.log(token, 'token')
+    state.email = localStorage.getItem('email')
     state.token = localStorage.getItem('token')
     state.statusCode = token.status
     state.message = token.message
