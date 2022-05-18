@@ -27,9 +27,15 @@
 
 <script setup>
 // vue import
-import {ref} from 'vue';
+import {ref, computed} from 'vue';
+import {useStore} from 'vuex';
 
 const openNav = ref(false)
+const store = useStore()
+
+const storeToken = computed(() => store.state.auth.token)
+
+const storeUsername = computed(() => store.state.auth.username)
 
 const setOpenNav = () => {
     openNav.value = !openNav.value

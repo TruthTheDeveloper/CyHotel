@@ -91,12 +91,28 @@ const actions = {
         commit('setLoading', false)
         commit('roomCreated', false)
       })
+  },
+  updateRooms:({commit, state},payload) => {
+    console.log('update', 'image')
+    let data = new FormData()
+    data.append('room_type', payload.roomTitle.value)
+    data.append('room_description', payload.roomDescription.value)
+    data.append('room_price', payload.roomPrice.value)
+    data.append('room_Image', payload.roomImage.value)
+    axios.put(`http://127.0.0.1:8000/api/rooms/${payload.roomId.value}/`,data)
+    .then( response => {
+      console.log(response, 'ur only')
+      commit('roomCreated', true)
+    })
+    .catch(err => {
+      console.log(err)
+    
+    })
+    
   }
+  
 
 }
-
-
-
 export default {
   namespaced: true,
   state,

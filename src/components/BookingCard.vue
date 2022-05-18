@@ -8,7 +8,7 @@
                 <p class="py-2">{{room.room_description}}</p>
                 <p>{{room.room_price}}</p>
                 <button v-if="buttonText === 'Book Now'" class="bg-pink-500 my-5 px-6 py-3 text-white" @click="bookButtonHandler_1()">{{props.buttonText}}</button>
-                <button v-if="buttonText === 'Update'" class="bg-pink-500 my-5 px-6 py-3 text-white" @click="bookButtonHandler_2(room.room_image, room.room_type, room.room_description, room.room_price)">{{props.buttonText}}</button>
+                <button v-if="buttonText === 'Update'" class="bg-pink-500 my-5 px-6 py-3 text-white" @click="bookButtonHandler_2(room.id, room.room_image, room.room_type, room.room_description, room.room_price)">{{props.buttonText}}</button>
             </div>
         </div>
 </template>
@@ -32,8 +32,9 @@ const bookButtonHandler_1 = () => {
     router.push('/dashboard')
 }
 
-const bookButtonHandler_2 = (room_image, room_type, room_description, room_price) => {
-    store.commit('rooms/roomsUpdateDetails', {room_image, room_type, room_description, room_price})
-    router.push('/admin/create/roomform')
+const bookButtonHandler_2 = (id, room_image, room_type, room_description, room_price) => {
+    console.log(id,'id')
+    store.commit('rooms/roomsUpdateDetails', {id, room_image, room_type, room_description, room_price})
+    router.push('/admin/update/roomform')
 }
 </script>

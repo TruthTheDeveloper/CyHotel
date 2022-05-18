@@ -40,7 +40,8 @@
                         label: 'text-center w-8 border-box whitespace-nowrap select-none',
                         }"/>
                 </div>
-                <button class="bg-pink-500 flex mx-auto py-4 my-4 rounded-full text-white px-16" @click.prevent="createRoomHandler()">{{buttonText}}</button>
+                <button v-if="buttonText === 'Create' " class="bg-pink-500 flex mx-auto py-4 my-4 rounded-full text-white px-16" @click.prevent="createRoomHandler()">{{buttonText}}</button>
+                <button v-else class="bg-pink-500 flex mx-auto py-4 my-4 rounded-full text-white px-16" @click.prevent="updateRoomHandler()">{{buttonText}}</button>
             </div>
         </form>
     </section>
@@ -65,7 +66,7 @@ const router = useRouter()
 
 //vuex state
 const store = useStore();
-
+const roomId = ref('');
 const roomTitle = ref('')
 const roomTitleValidationError = ref('')
 
@@ -87,6 +88,7 @@ onMounted(()=>{
     if(Object.keys(detailState).length === 0){
         return
     }else{
+        roomId.value = detailState.value.id
         roomTitle.value = detailState.value.room_type
         roomPrice.value = detailState.value.room_price
         roomDescription.value = detailState.value.room_description
@@ -97,6 +99,20 @@ onMounted(()=>{
 
 const getRoomImage = (event) => {
      roomImage.value = event.target.files[0]
+}
+
+const updateRoomHandler = () => {
+    console.log('update')
+    roomTitle.value === "" ? roomTitleValidationError.value = 'please input room Title' : null
+    roomPrice.value === "" ? roomPriceValidationError.value = "please input room price" : null
+    roomImage.value === "" ? roomImageValidationError.value = "please input room Image" : null
+    roomDescription.value === "" ? roomDescriptionValidationError.value = "please input room description" : null
+
+    !roomTitleValidationError.value && 
+    !roomImageValidationError.value &&
+    !roomPriceValidationError.value && 
+    !roomDescriptionValidationError.value && 
+    store.dispatch('rooms/updateRooms', {roomId, roomTitle, roomPrice, roomImage, roomDescription})
 }
 
 const createRoomHandler = () => {
@@ -112,7 +128,6 @@ const createRoomHandler = () => {
     store.dispatch('rooms/postRooms', {roomTitle, roomPrice, roomImage, roomDescription})
 };
 
-console.log(storeState.value, 'shjs')
 ////WATHCHERS////
 watch(storeState, (newVal,oldVal) => {
     console.log(newVal, oldVal, 'nil')

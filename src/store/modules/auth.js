@@ -7,6 +7,7 @@ const state = () => ({
   statusCode:null,
   token:  localStorage.getItem('token') || "",
   message:'',
+  allReservation:[]
 
 })
 
@@ -41,7 +42,10 @@ const mutations = {
     state.statusCode = res.status
     state.message = res.data.message
 
-    
+  },
+
+  getReservation:(state, res) => {
+    state.allReservation = res
   }
 
 }
@@ -81,6 +85,21 @@ const actions = {
         commit('loginFail', err.response)
       })
   },
+
+  getUsersReservation:({commit, state},data) => {
+    if(state.allReservation.length >= 1){
+      return
+    }else{
+      axios.get('http://127.0.0.1:8000/api/userInfo/')
+      .then(response => {
+        console.log(response)
+        commit('getReservation', response.data)
+      })
+      .catch(err => {
+        console.log(err)
+      })
+    }
+  }
 
 
 
