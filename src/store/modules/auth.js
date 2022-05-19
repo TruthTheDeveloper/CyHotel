@@ -98,7 +98,7 @@ const actions = {
       axios.get('http://127.0.0.1:8000/api/userInfo/')
       .then(response => {
         console.log(response)
-        commit('getReservation', response.data)
+        commit('getReservation', response.data.results)
       })
       .catch(err => {
         console.log(err)

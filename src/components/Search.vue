@@ -40,31 +40,50 @@
                 </div> -->
             </div>
         </div>
-        <div class=" px-8 py-3 bg-pink-500 text-white  text-center cursor-pointer md:pt-5 font-semibold">
+        <div class=" px-8 py-3 bg-pink-500 text-white  text-center cursor-pointer md:pt-5 font-semibold" @click="checkAvailable()">
             Check<br/> Availablity
         </div>
     </div> 
 </template>
 <script setup>
-import {ref} from 'vue';
+import {ref, watchEffect, computed} from 'vue';
+import {useStore} from 'vuex';
+import {useRouter} from 'vue-router';
+
+const store = useStore();
+
+const router = useRouter();
 
 //guest ref
 const guest = ref(1);
 
 const incrementGuest = () => {
     guest.value += 1
+
+    store.commit('rooms/setGuest', guest.value)
+    
 };
 
 
 const decrementGuest = () => {
     if(guest.value !==0){
         guest.value -= 1
+        store.commit('rooms/setGuest', guest.value)
     };
+};
+
+const checkAvailable = () => {
+    console.log('clicked')
+    router.push('/book')
 };
 
 // Date Ref
 const date = ref(new Date())
 const date2 = ref(new Date())
+// const setdate2 = computed(() => date)
+
+
+
 
 const month = ref(new Array());
 month.value[0] = "January";
@@ -80,4 +99,9 @@ month.value[9] = "October";
 month.value[10] = "November";
 month.value[11] = "December";
 
+
+watchEffect(() => {
+    store.commit('rooms/checkInMutation', date.value)
+    store.commit('rooms/checkOutMutation', date2.value)
+})
 </script>

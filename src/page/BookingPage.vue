@@ -7,19 +7,9 @@
         <booking-card buttonText="Book Now"/>
         <booking-card buttonText="Book Now"/>
         <booking-card buttonText="Book Now"/> -->
-        <div class="flex justify-center text-white">
-            <button class="bg-pink-500 py-4 px-4 mx-2 rounded-md">Previous</button>
-            <button class="border-2 text-black py-2 px-6 mx-2 rounded-md">1</button>
-            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md">2</button>
-            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden sm:block">3</button>
-            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden md:block">4</button>
-            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden md:block">5</button>
-            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden xl:block">6</button>
-            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden xl:block">7</button>
-            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden xl:block">8</button>
-            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden xl:block">9</button>
-            <button class="bg-pink-500 py-2 px-6 mx-2 rounded-md hidden xl:block">10</button>
-            <button class="bg-pink-500 py-4 px-6 mx-2 rounded-md">Last</button>
+        <div  class="flex justify-center text-white">
+            <button v-if="!storeLastPage" class="bg-pink-500 py-4 px-8 mx-2 rounded-md" @click="getNextPage(storePageNum)">Load More</button>
+            <p v-else class="text-black font-semibold text-lg">No More rooms....</p>
         </div>
     </section>
 </template>
@@ -51,6 +41,9 @@ const incrementGuest = () => {
     guest.value += 1
 };
 
+const getNextPage = (num) => {
+    store.dispatch('rooms/nextPage', num)
+};
 
 const decrementGuest = () => {
     if(guest.value !==0){
@@ -58,15 +51,18 @@ const decrementGuest = () => {
     };
 };
 
+const storePageNum = computed(() => store.state.rooms.pageNum)
 const storeState = computed(() => store.state.rooms.allRooms)
+const storeLastPage = computed(() => store.state.rooms.lastPage)
 
-console.log(storeState.value, 'store')
+
+
 
 storeState.value.map(el => console.log(el.room_type, 'el'))
 
 ///////////////MOUNT/////////
 onMounted(() => {
-  store.dispatch('rooms/getRooms')
+  store.dispatch('rooms/getRooms', storePageNum.value)
 });
 
 

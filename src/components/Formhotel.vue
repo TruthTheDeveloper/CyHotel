@@ -112,7 +112,7 @@ const updateRoomHandler = () => {
     !roomImageValidationError.value &&
     !roomPriceValidationError.value && 
     !roomDescriptionValidationError.value && 
-    store.dispatch('rooms/updateRooms', {roomId, roomTitle, roomPrice, roomImage, roomDescription})
+    store.dispatch('rooms/updateRooms', {roomId, roomTitle, roomPrice, roomImage, roomDescription, value})
 }
 
 const createRoomHandler = () => {
@@ -125,7 +125,7 @@ const createRoomHandler = () => {
     !roomImageValidationError.value &&
     !roomPriceValidationError.value && 
     !roomDescriptionValidationError.value && 
-    store.dispatch('rooms/postRooms', {roomTitle, roomPrice, roomImage, roomDescription})
+    store.dispatch('rooms/postRooms', {roomTitle, roomPrice, roomImage, roomDescription, value})
 };
 
 ////WATHCHERS////

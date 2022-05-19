@@ -7,7 +7,7 @@
                 <li class="mx-4 hover:text-pink-500 font-bold hidden"><i class="fas fa-eye text-xl"></i></li>
                     <li v-if="storeEmail" class="mx-4 hover:text-pink-500 font-bold">{{storeEmail}}</li>
                     <li v-else class=" hover:text-pink-500 font-bold"><router-link to="/register">Signup / </router-link><router-link to="/login">Login</router-link></li>
-                    <li  class="bg-pink-500 h-10  rounded-sm px-6 mx-4 cursor-pointer"><router-link to="/book">Book Now</router-link></li>
+                    <li  class="bg-pink-500 h-10 pt-1  rounded-sm px-6 mx-4 cursor-pointer"><router-link to="/book">Book Now</router-link></li>
                 </ul>
                 <div v-if="openNav === false" class="md:hidden" @click="setOpenNav()">
                     <i class="fa-solid fa-bars text-white text-3xl cursor-pointer"></i>

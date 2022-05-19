@@ -7,7 +7,7 @@
                 <h1 class="text-xl font-semibold py-2">{{room.room_type}}</h1>
                 <p class="py-2">{{room.room_description}}</p>
                 <p>{{room.room_price}}</p>
-                <button v-if="buttonText === 'Book Now'" class="bg-pink-500 my-5 px-6 py-3 text-white" @click="bookButtonHandler_1()">{{props.buttonText}}</button>
+                <button v-if="buttonText === 'Book Now'" class="bg-pink-500 my-5 px-6 py-3 text-white" @click="bookButtonHandler_1(room.id, room.room_Image, room.room_type, room.room_description, room.room_price)">{{props.buttonText}}</button>
                 <button v-if="buttonText === 'Update'" class="bg-pink-500 my-5 px-6 py-3 text-white" @click="bookButtonHandler_2(room.id, room.room_image, room.room_type, room.room_description, room.room_price)">{{props.buttonText}}</button>
             </div>
         </div>
@@ -28,7 +28,8 @@ const props = defineProps({
         roomList:Array
     })
 
-const bookButtonHandler_1 = () => {
+const bookButtonHandler_1 = (id, roomImage, roomType, roomDescription, roomPrice) => {
+    store.commit('rooms/roomsData', {roomImage, roomType, roomDescription, roomPrice})
     router.push('/dashboard')
 }
 
