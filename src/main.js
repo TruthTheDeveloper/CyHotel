@@ -32,7 +32,7 @@ import 'vue3-tel-input/dist/vue3-tel-input.css';
 
 //Flutterwave
 import Flutterwave from  'flutterwave-vue-v3';
-Vue.use(Flutterwave, { publicKey: 'FLWPUBK_TESTXXXXXXXXXX' } );
+
 //vue js toggle button
 
 
@@ -50,7 +50,7 @@ const options = {
 const app = createApp(App);
 
 //use flutterwave
-// app.use(Flutterwave, { publicKey: 'FLWPUBK_TEST-0c42e13ec815f2e5ac5a6f338dd605a5-X' })
+app.use(Flutterwave, { publicKey: "FLWPUBK-d2542a2ff7622c1994ace0b074b9a6ea-X" })
 
 //use vue notification
 app.use(Toast, options);
