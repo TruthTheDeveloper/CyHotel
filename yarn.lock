@@ -918,6 +918,11 @@ vue-toastification@^2.0.0-rc.5:
   resolved "https://registry.yarnpkg.com/vue-toastification/-/vue-toastification-2.0.0-rc.5.tgz#92798604d806ae473cfb76ed776fae294280f8f8"
   integrity sha512-q73e5jy6gucEO/U+P48hqX+/qyXDozAGmaGgLFm5tXX4wJBcVsnGp4e/iJqlm9xzHETYOilUuwOUje2Qg1JdwA==
 
+vue3-paystack@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/vue3-paystack/-/vue3-paystack-0.0.5.tgz#685013ced6b7f4cd10f335e822f105d5eda935cf"
+  integrity sha512-S+gobeLWQlRZ+xowuVrO7un/3CDQ7Bhrdvao4Mf/0YVDSRYDOJ93gf75qFEKt/6IgBKNBXKAz1DEHC6NcB8Slw==
+
 vue3-tel-input@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/vue3-tel-input/-/vue3-tel-input-1.0.4.tgz#ed26cb808d124aebb5073d03f366b23e686804d6"

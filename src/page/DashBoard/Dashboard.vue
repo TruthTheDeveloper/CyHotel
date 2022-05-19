@@ -5,11 +5,11 @@
             <h1 class="text-3xl text-center font-semibold">Confirm and pay</h1>
         </div>
         <div class="flex flex-col md:flex-row w-10/12 mx-auto ">
-            <form class="xl:mx-12 md:mx-4 border-2">
+            <div class="xl:mx-12 md:mx-4 border-2">
                 <h1 class="m-5 font-semibold">Your Details </h1>
                 <div class="flex flex-col xl:flex-row mx-5">
                     <div>
-                        <select class="xl:w-16 w-full mb-5 xl:mb-0  py-2  border-pink-500 border pl-2 placeholder:text-sm outline-none   rounded-sm" placeholder="Mr" @select="(e) => titleNameValidationError = '' " v-model="title">
+                        <select class="xl:w-16 w-full mb-5 xl:mb-0  py-2  border-pink-500 border pl-2 placeholder:text-sm outline-none   rounded-sm" placeholder="Mr" value="Mr" @input="(e) => titleNameValidationError = '' " v-model="title">
                         <option>Mr</option>
                         <option>Mrs</option>
                         <option>Miss</option>
@@ -33,7 +33,8 @@
                 </div>
                 <div class="flex flex-col xl:flex-row my-6 mx-5">
                     <div class="border-pink-500 border w-full  mb-5 xl:mb-0">
-                        <vue-tel-input class="h-full border-pink-500 border" v-model="phone"></vue-tel-input>
+                        <vue-tel-input class="h-full border-pink-500 border" v-model="phone"  @input="(e) => phoneValidationError = '' "></vue-tel-input>
+                        <p class="text-red-500 text-xs text-center">{{emailValidationError}}</p>
                     </div>
                     <div>
                         <input class="border-pink-500 border py-2 pl-2 xl:ml-8 placeholder:text-sm outline-none rounded-sm" placeholder="Email" v-model="email" @input="(e) => emailValidationError = '' "/>
@@ -80,12 +81,27 @@
                 </div>
                 <div class="flex flex-col xl:flex-row justify-between text-white mx-5">
                     <button class="bg-pink-500 my-3 md:py-4 py-2 px-4 md:px-6  rounded-md" @click.prevent="payAtHotelButtonHandler()">Pay at Hotel</button>
-                    <flutterwave-pay-button   @click="asyncPay" > Click To Pay </flutterwave-pay-button>
+
+                    <button class="bg-pink-500 my-3 md:py-4 py-2 px-4 md:px-12 text-white rounded-md">
+                        <paystack
+                        @click.prevent=""
+                        buttonClass="''"
+                        buttonText="Pay Online"
+                        :publicKey="publicKey"
+                        :email="email"
+                        :amount="amount"
+                        :reference="reference"
+                        :onSuccess="onSuccessfulPayment"
+                        :onCancel="onCancelledPayment">
+                        </paystack>
+                    </button>
+                    
                 </div>
+                 <!-- class="bg-pink-500 my-3 md:py-4 py-2 px-4 md:px-12  rounded-md" -->
                 <div class="lg:w-96 text-xs  bg-pink-200  my-12 mx-5 xl:mx-auto">
                     <p class="p-5">We use your personal data to process services that you have applied for, to contact you with newsletters and deal offers, and for personalised content and ads. You consent to our Data Policy if you click the above. You can withdraw consent and contact our Data Protection Officer at any time.</p>
                 </div>
-            </form>
+            </div>
             <div class=" lg:mx-12 md:mx-4 mt-12 md:mt-0 shadowx-xl border-2 p-5  h-3/6">
                 <div class="flex flex-col xl:flex-row justify-center">
                     <div>
@@ -116,7 +132,7 @@
                 </div>
                 <div class="flex justify-between p-5 bg-pink-100">
                     <p class=" font-semibold">Total</p>
-                    <p class="text-2xl font-semibold">{{storeState.roomPrice}}</p>
+                    <p class="text-xl font-semibold">{{storeState.roomPrice}}</p>
                 </div>
             </div>
         </div>
@@ -129,60 +145,42 @@ import {ref, computed} from 'vue';
 import { useRouter } from 'vue-router';
 import {useStore} from 'vuex';
 
-
+import paystack from "vue3-paystack";
+//Toast Notification
+import { useToast } from "vue-toastification";
 
 
 
 
 
 export default {
-     name: 'Dashboard',
-    data(){
-    return {
-      paymentData: {
-        tx_ref: this.generateReference(),
-        amount: 10,
-        currency: 'NGN',
-        payment_options: 'card,ussd',
-        redirect_url: '',
-        meta: {
-          'counsumer_id': '7898',
-          'consumer_mac': 'kjs9s8ss7dd'
-        },
-        customer: {
-          name: 'Demo Customer  Name',
-          email: 'customer@mail.com',
-          phone_number: '0818450***44'
-        } ,
-        customizations: {
-          title: 'Customization Title',
-          description: 'Customization Description',
-          logo: 'https://flutterwave.com/images/logo-colored.svg'
-        },
-        callback: this.makePaymentCallback,
-        onclose: this.closedPaymentModal
-      }
-    }
-  } ,
+    components: {
+    paystack,
+    Navbar
+  },
+  
     setup(){
-        const router = useRouter()
-        const store = useStore()
-        const phone = ref('070190354442')
-        const title = ref('')
-        const titleValidationError = ref('')
-        const firstName = ref('')
-        const firstNameValidationError = ref('')
-        const lastName = ref('')
-        const lastNameValidationError = ref('')
-        const email = ref('')
-        const emailValidationError = ref('')
+        // const toast = useToast()
+        const router = useRouter();
+        const store = useStore();
+        const phone = ref('070190354442');
+        const phoneValidationError = ref('');
+        const title = ref('');
+        const titleValidationError = ref('');
+        const firstName = ref('');
+        const firstNameValidationError = ref('');
+        const lastName = ref('');
+        const lastNameValidationError = ref('');
+        const email = ref('');
+        const emailValidationError = ref('');
+        
 
-        const storeState = computed(() => store.state.rooms.roomData)
-        const storeCheckIn = computed(() => store.state.rooms.checkIn)
-        const storeCheckOut = computed(() => store.state.rooms.checkOut)
-        const storeGuest = computed(() => store.state.rooms.guest)
+        const storeState = computed(() => store.state.rooms.roomData);
+        const storeCheckIn = computed(() => store.state.rooms.checkIn);
+        const storeCheckOut = computed(() => store.state.rooms.checkOut);
+        const storeGuest = computed(() => store.state.rooms.guest);
 
-
+        const amount = ref(storeState.value.roomPrice);
         const month = ref(new Array());
         month.value[0] = "January";
         month.value[1] = "February";
@@ -198,10 +196,11 @@ export default {
         month.value[11] = "December";
 
         const payAtHotelButtonHandler = () => {
-            title.value === "" ? titleValidationError.value = 'please selectTitle' : null
-            email.value === "" ? emailValidationError.value = "please input email" : null
-            lastName.value === "" ? lastNameValidationError.value = "please input last name" : null
-            firstName.value === "" ? firstNameValidationError.value = "please input first name" : null
+            title.value === "" ? titleValidationError.value = 'please selectTitle' : null;
+            email.value === "" ? emailValidationError.value = "please input email" : null;
+            lastName.value === "" ? lastNameValidationError.value = "please input last name" : null;
+            firstName.value === "" ? firstNameValidationError.value = "please input first name" : null;
+            phone.value === "" ? phoneValidationError.value = "please input phone number" : null;
 
             !titleValidationError.value && 
             !emailValidationError.value && 
@@ -216,6 +215,7 @@ export default {
             router.push('/book')
         }
         return{
+            phoneValidationError,
             phone,
             title,
             titleValidationError,
@@ -230,29 +230,64 @@ export default {
             storeCheckOut,
             storeGuest,
             month,
-            payAtHotelButtonHandler
+            payAtHotelButtonHandler,
         }
     },
-    methods: {
-        asyncPay() {
-    
-        this.asyncPayWithFlutterwave(this.paymentData).then(
-                (response) => {
-                    console.log(response)
-                }
-        )
-        
-    } ,
-   
-    closedPaymentModal() {
-      console.log('payment is closed');
-    },
-    generateReference(){
-      let date = new Date()
-      return date.getTime().toString();
+    data() {
+    return{
+        publicKey:'pk_test_5899c5730c6a69c33fc4ff3e4902a20a9508cd49',
+        amount:1000, //Expressed in lowest demonitation, so 1000kobo is equivalent to 10Naira
+        gmail:'somteacodes@gmail.com',
+        firstname:'Somtea', //optional field remember to pass as a prop of firstname if needed
+        lastname:'Codes',
+        router:useRouter(),//optional field remember to pass as a prop of lastname if needed
+        toast:useToast()
     }
+  },
+  computed: {
+    reference: function() {
+        // if using nanoid to generate randomRef
+        // comment this out if not using nano id
+    //   return nanoid(15);
 
-  }
+    //   you can use plain JS to generate random ref ID, just uncomment this section if you
+
+        let randomRef = "";
+        let characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        for( let i=0; i < 15; i++ )
+          randomRef += characters.charAt(Math.floor(Math.random() * characters.length));
+
+        return randomRef;
+
+    },
+    price:function(){
+        return this.$store.state.rooms.roomData.roomPrice
+    }
+  },
+    methods: {
+    successToastNotification:function(response){
+    this.toast.success('payment successfull please lodge at the checkin date', {
+        timeout: 4000
+    })
+    this.router.push('/')
+    },
+    errorToastNotification:function(response){
+    this.toast.error('payment was unsuccessful', {
+        timeout: 4000
+        })
+    },
+    onSuccessfulPayment: function(response) {
+      console.log(response, 'succefull');
+    //   this.router.push('/reservation')
+      this.successToastNotification()
+    },
+    onCancelledPayment: function() {
+      console.log("Payment cancelled by user");
+      this.errorToastNotification()
+    },
+    
+  },
 }
 
 </script>

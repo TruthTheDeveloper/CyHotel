@@ -30,8 +30,6 @@ import VCalendar from 'v-calendar';
 import VueTelInput from 'vue3-tel-input';
 import 'vue3-tel-input/dist/vue3-tel-input.css';
 
-//Flutterwave
-import Flutterwave from  'flutterwave-vue-v3';
 
 //vue js toggle button
 
@@ -50,7 +48,6 @@ const options = {
 const app = createApp(App);
 
 //use flutterwave
-app.use(Flutterwave, { publicKey: "FLWPUBK-d2542a2ff7622c1994ace0b074b9a6ea-X" })
 
 //use vue notification
 app.use(Toast, options);

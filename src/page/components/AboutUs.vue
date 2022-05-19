@@ -11,10 +11,16 @@
             <h1 class="text-xl font-bold my-4 border-b-4 pb-3 border-pink-500 ">About Us</h1>
             <h1 class="lg:text-5xl font-semibold my-8 text-3xl  md:text-4xl">The best comfort start here!</h1>
             <p class="text-lg text-slate-500">No one rejects dislikes or avoid pleasure itself<br/>because it is pleasure but because those who do not know how to pursue</p>
-            <button class="my-8 bg-pink-500 py-4 px-8 text-white rounded-sm text-lg">Book Now</button>
+            <button class="my-8 bg-pink-500 py-4 px-8 text-white rounded-sm text-lg" @click="bookButtonHandler()">Book Now</button>
         </div>
     </section>
 </template>
 
-<script>
+<script setup>
+import { useRouter } from 'vue-router';
+const router = useRouter()
+
+const bookButtonHandler = () => {
+    router.push('/book')
+}
 </script>
