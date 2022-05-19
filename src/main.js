@@ -31,8 +31,8 @@ import VueTelInput from 'vue3-tel-input';
 import 'vue3-tel-input/dist/vue3-tel-input.css';
 
 //Flutterwave
-// import Flutterwave from  'vue-flutterwave';
-
+import Flutterwave from  'flutterwave-vue-v3';
+Vue.use(Flutterwave, { publicKey: 'FLWPUBK_TESTXXXXXXXXXX' } );
 //vue js toggle button
 
 

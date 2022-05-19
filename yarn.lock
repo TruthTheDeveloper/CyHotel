@@ -537,6 +537,11 @@ fill-range@^7.0.1:
   dependencies:
     to-regex-range "^5.0.1"
 
+flutterwave-vue-v3@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/flutterwave-vue-v3/-/flutterwave-vue-v3-1.0.5.tgz#2ebc2093cad01fe95245a5440282a03a533621ae"
+  integrity sha512-etYKOWRdZPXJAVAk3karFNfGl0MPzmg4917ZNU3BlSV82sMxsXqsu0L9D4SwPFehrsP+BPCYtnxuHaMRJAQOBQ==
+
 follow-redirects@^1.14.9:
   version "1.15.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.0.tgz#06441868281c86d0dda4ad8bdaead2d02dca89d4"

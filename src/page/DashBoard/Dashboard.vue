@@ -80,7 +80,24 @@
                 </div>
                 <div class="flex flex-col xl:flex-row justify-between text-white mx-5">
                     <button class="bg-pink-500 my-3 md:py-4 py-2 px-4 md:px-6  rounded-md" @click.prevent="payAtHotelButtonHandler()">Pay at Hotel</button>
-                    <button class="bg-pink-500 my-3 md:py-4 py-2 px-4 md:px-12  rounded-md">Pay Now</button>
+                    <flutterwave-pay-button
+                        :tx_ref="generateReference()"
+                        :amount=20
+                        currency='NGN'
+                        payment_options="card,ussd"
+                        redirect_url=""
+                        class="bg-pink-500 my-3 md:py-4 py-2 px-4 md:px-12  rounded-md"
+                        style=""
+                        :meta="{counsumer_id: '7898' ,consumer_mac: 'kjs9s8ss7dd' }"
+                        :customer="{ name: 'Demo Customer  Name',
+                        email: 'customer@mail.com', 
+                        phone_number: '0818450****' }"
+                        :customizations="{  title: 'Customization Title' ,
+                        description: 'Customization Description'  ,
+                        logo : 'https://flutterwave.com/images/logo-colored.svg' }"
+                        :callback="makePaymentCallback"
+                        :onclose="closedPaymentModal"
+                    >   Click To Pay </flutterwave-pay-button>
                 </div>
                 <div class="lg:w-96 text-xs  bg-pink-200  my-12 mx-5 xl:mx-auto">
                     <p class="p-5">We use your personal data to process services that you have applied for, to contact you with newsletters and deal offers, and for personalised content and ads. You consent to our Data Policy if you click the above. You can withdraw consent and contact our Data Protection Officer at any time.</p>
@@ -182,6 +199,19 @@ const payAtHotelButtonHandler = () => {
 
 const changeButtonHandler = () => {
     router.push('/book')
+}
+
+const makePaymentCallback = (response) => {
+      console.log("Payment callback", response)
+}
+
+const closedPaymentModal = () => {
+      console.log('payment modal is closed');
+},
+
+const generateReference = () => {
+    let date = new Date()
+    return date.getTime().toString();
 }
 
 
