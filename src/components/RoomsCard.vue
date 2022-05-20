@@ -8,7 +8,7 @@
                 <p class="text-sm my-2 text-slate-500  w-44">{{roomDescription}}</p>
                 <p>Starting from<span class="font-semibold text-xl">{{roomPrice}}</span></p>
                 <button class="bg-pink-500 my-5 px-6 py-3 text-white">
-                    <a href="#rooms">Book Now</a></li>
+                    <a href="#header">Book Now</a>
                 </button>
             </div>
         </div>

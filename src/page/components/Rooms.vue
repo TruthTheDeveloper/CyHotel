@@ -19,33 +19,33 @@
                 <rooms-card
                 roomImage="https://res.cloudinary.com/di8abd9yq/image/upload/v1651116475/room10_lijxtd.jpg" 
                 roomType="Duplex Room" 
-                roomDescription="Semi double bed 1 guest room 3 windows" roomPrice="$50/night"
+                roomDescription="Semi double bed 1 guest room 3 windows" roomPrice="#3000/night"
                 />
              </swiper-slide>
             <swiper-slide>
                 <rooms-card 
                 roomImage="https://res.cloudinary.com/di8abd9yq/image/upload/v1651116472/room15_asuib2.jpg" roomType="Classic Room" 
-                roomDescription="Double bed 2 window mountain view" roomPrice="$80/night"/>
+                roomDescription="Double bed 2 window mountain view" roomPrice="#5000/night"/>
             </swiper-slide>
             <swiper-slide>
                 <rooms-card 
                 roomImage="https://res.cloudinary.com/di8abd9yq/image/upload/v1651116432/room8_e9wyhl.jpg" roomType="Double Room" 
-                roomDescription="Semi double bed 3 widows mountai view" roomPrice="$50/night"/>
+                roomDescription="Semi double bed 3 widows mountai view" roomPrice="#3000/night"/>
             </swiper-slide>
             <swiper-slide>
                 <rooms-card 
                 roomImage="https://res.cloudinary.com/di8abd9yq/image/upload/v1651116427/room1_enlafx.jpg" roomType="Flat Room" 
-                roomDescription="Sami double bed 1 guest room 3 windows" roomPrice="$150/night"/>
+                roomDescription="Sami double bed 1 guest room 3 windows" roomPrice="#10000/night"/>
             </swiper-slide>
             <swiper-slide>
                 <rooms-card 
                 roomImage="https://res.cloudinary.com/di8abd9yq/image/upload/v1651116460/room5_ycrpo0.jpg" roomType="Duplex Room" 
-                roomDescription="Sami double bed 1 guest room 3 windows" roomPrice="$50/night"/>
+                roomDescription="Sami double bed 1 guest room 3 windows" roomPrice="#5000/night"/>
                 </swiper-slide>
             <swiper-slide>
                 <rooms-card 
                 roomImage="https://res.cloudinary.com/di8abd9yq/image/upload/v1651116459/room13_hmtqtu.jpg" roomType="Classic Room" 
-                roomDescription="Sami double bed 1 guest room 3 windows" roomPrice="$80/night"/>
+                roomDescription="Sami double bed 1 guest room 3 windows" roomPrice="#3000/night"/>
                 </swiper-slide>
             </swiper>
         </div>

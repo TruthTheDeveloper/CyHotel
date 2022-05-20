@@ -1,6 +1,6 @@
 <template>
     <section class="overflow-x-hidden">
-    <header class="">
+    <header id="header" class="">
         <div class="header-background-image px-8 pb-16 lg:h-screen">
             <nav class="h-5 flex p-4 justify-between ">
                 <h1 class="text-white text-2xl md:text-3xl lg:text-4xl font-extrabold ">Cy-<span class="text-pink-500">hotel</span></h1>
