@@ -112,7 +112,7 @@ const actions = {
       return
     }else{
       console.log('send response')
-      axios.get(`http://127.0.0.1:8000/api/rooms/?available=True&page=${pageNum}`)
+      axios.get(`https://cyhotelapi.herokuapp.com/api/rooms/?available=True&page=${pageNum}`)
       .then( response => {
         console.log(response)
         commit('setRoomsToState', response.data.results)
@@ -132,7 +132,7 @@ const actions = {
     if(state.lastPage){
       return
     }else{
-      axios.get(`http://127.0.0.1:8000/api/rooms/?available=True&page=${pageNum}`)
+      axios.get(`https://cyhotelapi.herokuapp.com/api/rooms/?available=True&page=${pageNum}`)
       .then( response => {
         // console.log(response)
         if(response.data.results.length >= 1){
@@ -167,7 +167,7 @@ const actions = {
       return
     }else{
       console.log('send response')
-      axios.get(`http://127.0.0.1:8000/api/rooms/?page=${pageNum}`)
+      axios.get(`https://cyhotelapi.herokuapp.com/api/rooms/?page=${pageNum}`)
       .then( response => {
         console.log(response)
         commit('setRoomsToState', response.data.results)
@@ -188,7 +188,7 @@ const actions = {
       return
     }else{
       console.log('send response')
-      axios.get(`http://127.0.0.1:8000/api/rooms/?page=${pageNum}`)
+      axios.get(`https://cyhotelapi.herokuapp.com/api/rooms/?page=${pageNum}`)
       .then( response => {
         if(response.data.results.length >= 1){
           state.allRooms = [...state.allRooms, ...response.data.results]
@@ -219,7 +219,7 @@ const actions = {
     data.append('room_description', payload.roomDescription.value)
     data.append('room_price', payload.roomPrice.value)
     data.append('room_Image', payload.roomImage.value)
-    axios.post('http://127.0.0.1:8000/api/rooms/',data)
+    axios.post('https://cyhotelapi.herokuapp.com/api/rooms/',data)
       .then( response => {
         console.log(response, 'ur only')
         commit('setCreateRoom', response.data.results)
@@ -239,7 +239,7 @@ const actions = {
     data.append('room_description', payload.roomDescription.value)
     data.append('room_price', payload.roomPrice.value)
     data.append('room_Image', payload.roomImage.value)
-    axios.put(`http://127.0.0.1:8000/api/rooms/${payload.roomId.value}/`,data)
+    axios.put(`https://cyhotelapi.herokuapp.com/api/rooms/${payload.roomId.value}/`,data)
     .then( response => {
       console.log(response, 'ur only')
       commit('roomCreated', true)
@@ -253,7 +253,7 @@ const actions = {
 
   bookRoom:({commit}, payload) => {
     console.log(payload)
-    axios.post(`http://127.0.0.1:8000/api/userInfo/`,{
+    axios.post(`https://cyhotelapi.herokuapp.com/api/userInfo/`,{
       title:payload.title.value,
       first_name:payload.firstName.value,
       last_name:payload.lastName.value,

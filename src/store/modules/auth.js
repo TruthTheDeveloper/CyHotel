@@ -61,7 +61,7 @@ const actions = {
 
 
   registerUser:({commit}, data) => {
-    axios.post('http://127.0.0.1:8000/api/users/register/',{
+    axios.post('https://cyhotelapi.herokuapp.com/api/users/register/',{
         username:data.username.value, 
         email:data.lowerCaseEmail.value, 
         phone_number:data.phoneNumber.value,
@@ -78,7 +78,7 @@ const actions = {
 
 
   loginUser:({commit}, data) => {
-    axios.post('http://127.0.0.1:8000/api/users/',{
+    axios.post('https://cyhotelapi.herokuapp.com/api/users/',{
         email:data.email.value, 
         password:data.password.value
       })
@@ -95,7 +95,7 @@ const actions = {
     if(state.allReservation.length >= 1){
       return
     }else{
-      axios.get('http://127.0.0.1:8000/api/userInfo/')
+      axios.get('https://cyhotelapi.herokuapp.com/api/userInfo/')
       .then(response => {
         console.log(response)
         commit('getReservation', response.data.results)
