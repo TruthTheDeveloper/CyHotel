@@ -8,14 +8,14 @@ body{
 }
 
 .header-background-image{
-    background:linear-gradient(to bottom, rgba(0, 0, 0, 0.459),rgba(0, 0, 0, 0.432)), url(./assets/images/room13.jpg);
+    background:linear-gradient(to bottom, rgba(0, 0, 0, 0.459),rgba(0, 0, 0, 0.432)), url(https://res.cloudinary.com/dyojwpsfb/image/upload/v1653019500/room13_tmm85k.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .service-background-image{
-    background:url(./assets/images/room10.jpg);
+    background:url(https://res.cloudinary.com/dyojwpsfb/image/upload/v1653019727/room10_s0o9pc.jpg);
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -23,7 +23,7 @@ body{
 }
 
 .explore-background-image{
-    background:url(./assets/images/room11.jpg);
+    background:url(https://res.cloudinary.com/dyojwpsfb/image/upload/v1653019727/room10_s0o9pc.jpg);
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;

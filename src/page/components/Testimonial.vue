@@ -8,7 +8,7 @@
             </div>
             <div class="flex my-24">
                 <div class="h-24 w-24 ">
-                    <img src="../../assets/images/Edgar.jpg" class="rounded-full border border-pink-500"/>
+                    <img src="https://res.cloudinary.com/dyojwpsfb/image/upload/v1649121452/Edgar_glkkez.jpg" class="rounded-full border border-pink-500"/>
                 </div>
                 <div class="ml-6 ">
                     <h1 class="font-semibold text-lg my-1">Justin Varco</h1>
@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="basis-1/2">
-           <img src="../../assets/images/room8.jpg" class="h-full rounded-lg"/> 
+           <img src="https://res.cloudinary.com/dyojwpsfb/image/upload/v1653019723/room8_afwtfp.jpg" class="h-full rounded-lg"/> 
         </div>
     </section>
 </template>
