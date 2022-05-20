@@ -27,6 +27,7 @@ const store = useStore();
 const router = useRouter()
 
 const routeAddroomPage = () => {
+    console.log('route pushed')
     router.push('/admin/create/roomform')
 }
 

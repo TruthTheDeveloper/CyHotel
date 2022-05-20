@@ -1,16 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router';
-// const LandingPage = () => import("./page/landingPage.vue");
-// const BookingPage = () => import("./page/bookingPage.vue");
-// const Register = () => import("./page/Auth/register.vue");
-// const Login = () => import("./page/Auth/login.vue")
-// const DashBoard = () => import("./page/Dashboard/dashboard.vue")
-// const Reservation = () => import('./page/DashBoard/reservation.vue')
-// const AdminLandingPage = () => import('./page/Admin/adminLandingPage.vue')
-// const AdminAuth = () => import('./page/Admin/adminLandingPage.vue')
-// const AdminDashboard  = () => import('./page/Admin/adminDashboard.vue')
-// const createRoomForm = () => import('./page/Admin/createRoomForm.vue')
-// const UpdateRoomForm = () => import('./page/Admin/updateRoomform.vue')
-// const Management = () => import('./page/Admin/management.vue')
 import LandingPage from './page/LandingPage.vue';
 import BookingPage from './page/BookingPage.vue';
 import Register from './page/Auth/Register.vue';
