@@ -1,16 +1,22 @@
 import { createRouter, createWebHistory } from 'vue-router';
+
+//users route
 import LandingPage from './page/LandingPage.vue';
 import BookingPage from './page/BookingPage.vue';
 import Register from './page/Auth/Register.vue';
 import Login from './page/Auth/Login.vue';
 import DashBoard from './page/DashBoard/Dashboard.vue';
 import Reservation from './page/DashBoard/Reservation.vue';
+
+
+//Admin routes
 import AdminLandingPage from './page/SuperUser/AdminLandingPage.vue';
 import AdminAuth from './page/SuperUser/AdminAuth.vue';
 import AdminDashboard from './page/SuperUser/AdminDashboard.vue';
 import CreateRoomForm from './page/SuperUser/CreateRoomForm.vue';
 import UpdateRoomForm from './page/SuperUser/UpdateRoomform.vue';
 import Management from './page/SuperUser/Management.vue';
+// import NotFound from './page/NotFound.vue';
 
 export const router = createRouter({
     history:createWebHistory(),
@@ -76,6 +82,13 @@ export const router = createRouter({
             path:'/admin/management',
             component:Management
         },
+        // we wud use vercel 404 page for production
+        // {
+        //     // path: "*",
+        //     path: "/:catchAll(.*)",
+        //     name: "NotFound",
+        //     component: NotFound,
+        // }
 
     ]
 })

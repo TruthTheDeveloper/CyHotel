@@ -35,6 +35,7 @@ import {useStore} from 'vuex';
 //vuex state
 const store = useStore();
 
+///COMPUTED///
 const storeState = computed(() => store.state.auth.allReservation)
 
 

@@ -85,6 +85,7 @@ setup() {
       const onSlideChange = () => {
       };
 
+      ///FUNCTION THAT WATHES FOR SCREEN RESIZE AND PERFORM LOGIC DEPENDING ON THE SCREEN SIZE//
       const onResize = () => {
         if (window.innerWidth < 650) {
             isGreaterThan425x.value = 1;

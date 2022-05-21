@@ -6,7 +6,7 @@
 
 
 <script setup>
-
+//Component
 import Footer from './components/Footer.vue';
 
 </script>

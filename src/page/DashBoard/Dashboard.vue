@@ -145,13 +145,15 @@ import {ref, computed} from 'vue';
 import { useRouter } from 'vue-router';
 import {useStore} from 'vuex';
 
+//Paystack libary
 import paystack from "vue3-paystack";
+
 //Toast Notification
 import { useToast } from "vue-toastification";
 
 
 
-
+/// AMIXTURE OF BOTH COMPOSITION AND OPRION API
 
 export default {
     components: {

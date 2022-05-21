@@ -6,6 +6,7 @@ import store from './store';
 
 //vue router
 import {router} from './router.js'
+
 //Golbal css
 import './index.css';
 
@@ -37,11 +38,6 @@ import 'vue3-tel-input/dist/vue3-tel-input.css';
 //Vue notification Toast
 import Toast from "vue-toastification";
 import "vue-toastification/dist/index.css";
-
-// Toast default options
-const options = {
-    // You can set your default options here
-};
 
 
 

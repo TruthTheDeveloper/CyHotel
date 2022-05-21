@@ -63,6 +63,7 @@ import {ref} from 'vue';
 
 const openNav = ref(false)
 
+//function for handle toggleof the responsive navbar
 const setOpenNav = () => {
     openNav.value = !openNav.value
 }

@@ -12,6 +12,8 @@
 </template>
 
 <script setup>
+
+///UI COMPONENT///
 import Navbar from '../../components/Navbar.vue';
 import BookingCard from '../../components/BookingCard.vue';
 
@@ -24,8 +26,10 @@ import {useStore} from 'vuex';
 //vuex state
 const store = useStore();
 
+//route state
 const router = useRouter()
 
+//METHODS//
 const routeAddroomPage = () => {
     console.log('route pushed')
     router.push('/admin/create/roomform')
@@ -35,6 +39,7 @@ const getNextPage = (num) => {
     store.dispatch('rooms/adminNextPage', num)
 };
 
+///VUEX STATE GETTERS//
 const storePageNum = computed(() => store.state.rooms.adminPageNum)
 const storeLastPage = computed(() => store.state.rooms.adminLastPage)
 const storeState = computed(() => store.state.rooms.allRooms)
