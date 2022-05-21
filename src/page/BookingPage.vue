@@ -2,6 +2,13 @@
     <section class="">
         <navbar/>
         <h1 class="text-center font-bold text-xl lg:text-3xl py-16">Select and book from the 220 rooms available</h1>
+        <div v-if="storeLoader" class="flex justify-center my-24">
+            <half-circle-spinner
+            :animation-duration="1000"
+            :size="60"
+            color="#EC4899"
+            />
+        </div>
         <booking-card :roomList="storeState" buttonText="Book Now"/>
     
         <div  class="flex justify-center text-white">
@@ -22,6 +29,10 @@ import {ref, onMounted, computed} from 'vue';
 
 //vuex import
 import {useStore} from 'vuex';
+
+
+//loading spinner component
+import { HalfCircleSpinner } from 'epic-spinners';
 
 //vuex state
 const store = useStore();
@@ -55,6 +66,7 @@ const decrementGuest = () => {
 const storePageNum = computed(() => store.state.rooms.pageNum)
 const storeState = computed(() => store.state.rooms.allRooms)
 const storeLastPage = computed(() => store.state.rooms.lastPage)
+const storeLoader = computed(() => store.state.rooms.loading)
 
 
 

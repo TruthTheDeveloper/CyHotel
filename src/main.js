@@ -46,7 +46,7 @@ const app = createApp(App);
 //use flutterwave
 
 //use vue notification
-app.use(Toast, options);
+app.use(Toast);
 //use vuetel
 app.use(VueTelInput);
 //use router
